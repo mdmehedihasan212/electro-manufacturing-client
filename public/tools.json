@@ -1,0 +1,66 @@
+[
+    {
+        "image": "https://i.ibb.co/9sPHNmY/tools-1.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/tLFBLd2/tools-2.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/DpxBVMK/tools-3.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/85MwsSq/tools-4.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/yfqdwTK/tools-5.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/S6yCQcN/tools-6.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/nnVwPN9/tools-7.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    },
+    {
+        "image": "https://i.ibb.co/bb888Nk/tools-8.jpg",
+        "name": "Fern Duke",
+        "available_quantity": 117,
+        "minimum_quantity": 40,
+        "price": "$310.91",
+        "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    }
+]
