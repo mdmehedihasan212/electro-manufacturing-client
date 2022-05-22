@@ -10,7 +10,7 @@ const Footer = () => {
                 <h1 class="footer-title text-2xl">Contact</h1>
                 <a class="link link-hover">Address: 4518 Spirit Drive, Deland, FL 32720</a>
                 <a class="link link-hover">Phone: 1-888-123-4567</a>
-                <a class="link link-hover">Email: electrcs@gmail.com</a>
+                <a class="link link-hover">Email: electro@gmail.com</a>
             </div>
             <div>
                 <h1 class="footer-title text-2xl">Social</h1>

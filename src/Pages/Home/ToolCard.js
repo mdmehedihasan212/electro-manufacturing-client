@@ -2,7 +2,7 @@ import React from 'react';
 import PrimaryButton from '../Shared/PrimaryButton';
 
 const ToolCard = ({ tool }) => {
-    const { image, description, available_quantity, minimum_quantity, name, price, _id } = tool;
+    const { image, description, available_quantity, minimum_quantity, name, price } = tool;
 
     return (
         <div class="card w-96 shadow-2xl rounded-none">
