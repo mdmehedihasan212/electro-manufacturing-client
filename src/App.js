@@ -1,12 +1,16 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './Pages/Home/Home';
+import Navbar from './Pages/Shared/Navbar';
 
 function App() {
   return (
     <div>
+      <Navbar></Navbar>
       <h1 className='text-3xl text-primary'>Electro Manufacturing</h1>
-      <button class="btn btn-primary">Button</button>
-      <button class="btn btn-secondary">Button</button>
-      <button class="btn btn-accent">Button</button>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+      </Routes>
     </div>
   );
 }
