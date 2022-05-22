@@ -1,16 +1,20 @@
 import React from 'react';
+import PrimaryButton from '../Shared/PrimaryButton';
 
 const ToolCard = ({ tool }) => {
     const { image, description, available_quantity, minimum_quantity, name, price, _id } = tool;
 
     return (
-        <div class="card w-96 shadow-2xl">
-            <figure><img src={image} alt="img" /></figure>
-            <div class="">
-                <h2 class="card-title">{name}</h2>
-                <p>{description}</p>
-                <div class="card-actions justify-center">
-                    <button class="btn btn-primary">Buy Now</button>
+        <div class="card w-96 shadow-2xl rounded-none">
+            <figure><img className='w-3/4' src={image} alt="img" /></figure>
+            <div class="p-8 text-center text-neutral">
+                <h1 className='text-2xl'>Name: {name}</h1>
+                <p className='text-lg'>Available Quantity: {available_quantity}</p>
+                <p className='text-lg'>Minimum Quantity: {minimum_quantity}</p>
+                <p className='text-lg'>Price: {price}</p>
+                <p className='text-lg'>Description: {description}</p>
+                <div class="mt-2 justify-center">
+                    <PrimaryButton>Buy Now</PrimaryButton>
                 </div>
             </div>
         </div>

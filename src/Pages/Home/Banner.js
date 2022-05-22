@@ -1,5 +1,6 @@
 import React from 'react';
 import banner from '../../assets/Banner/banner-1.webp';
+import PrimaryButton from '../Shared/PrimaryButton';
 
 const Banner = () => {
     return (
@@ -14,7 +15,7 @@ const Banner = () => {
                     <h1 class="mb-1 text-7xl font-bold text-primary">Committed</h1>
                     <h2 className='mb-5 text-7xl'>To Super Quality</h2>
                     <p className='mb-5 text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
-                    <button class="mb-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none">Go to Shop</button>
+                    <PrimaryButton>Go to Shop</PrimaryButton>
                 </div>
             </div>
         </div>
