@@ -17,9 +17,13 @@ const Login = () => {
                                 </label>
                                 <input
                                     {...register("email", {
+                                        required: {
+                                            value: true,
+                                            message: 'Email is required'
+                                        },
                                         pattern: {
                                             value: /[A-Za-z]{3}/,
-                                            message: 'Email is required'
+                                            message: 'Provide a valid email'
                                         }
                                     })}
                                     type="email"
@@ -29,19 +33,40 @@ const Login = () => {
                                     {errors.email?.type === 'required' &&
                                         <span className="label-text-alt text-red-500">{errors.email?.message}</span>
                                     }
+                                    {errors.email?.type === 'pattern' &&
+                                        <span className="label-text-alt text-red-500">{errors.email?.message}</span>
+                                    }
                                 </label>
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="Password" class="input input-bordered" />
+                                <input
+                                    {...register("password", {
+                                        required: {
+                                            value: true,
+                                            message: 'Password is required'
+                                        },
+                                        pattern: {
+                                            value: /[A-Za-z]{6}/,
+                                            message: 'Password minimum 6 character'
+                                        }
+                                    })}
+                                    type="password"
+                                    placeholder="Password"
+                                    class="input input-bordered" />
                                 <label class="label">
-                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                                    {errors.password?.type === 'required' &&
+                                        <span className="label-text-alt text-red-500">{errors.password?.message}</span>
+                                    }
+                                    {errors.password?.type === 'pattern' &&
+                                        <span className="label-text-alt text-red-500">{errors.password?.message}</span>
+                                    }
                                 </label>
                             </div>
                             <div class="form-control mt-6">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <input class="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </div>
                     </div>
