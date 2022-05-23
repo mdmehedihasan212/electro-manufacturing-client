@@ -1,12 +1,24 @@
 import React from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../firebase/firebase.init';
 import GoogleLogin from './GoogleLogin';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
     const onSubmit = data => {
         console.log(data)
+        createUserWithEmailAndPassword(data.email, data.password)
+        toast('Successfully Create User With Email')
     };
 
     return (

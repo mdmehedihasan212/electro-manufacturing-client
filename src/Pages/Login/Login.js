@@ -1,12 +1,24 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../firebase/firebase.init';
 import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
     const onSubmit = data => {
         console.log(data)
+        signInWithEmailAndPassword(data.email, data.password)
+        toast('Successfully Sign In With Email')
     };
 
     return (
