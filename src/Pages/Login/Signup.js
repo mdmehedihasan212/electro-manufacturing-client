@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -14,10 +14,13 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const onSubmit = data => {
+    const onSubmit = async data => {
         console.log(data)
-        createUserWithEmailAndPassword(data.email, data.password)
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
+        alert('Updated profile');
         toast('Successfully Create User With Email')
     };
 
@@ -73,31 +76,6 @@ const Signup = () => {
                                     }
                                     {errors.email?.type === 'pattern' &&
                                         <span className="label-text-alt text-red-500">{errors.email?.message}</span>
-                                    }
-                                </label>
-                            </div>
-
-                            <div class="form-control">
-                                <input
-                                    {...register("number", {
-                                        required: {
-                                            value: true,
-                                            message: 'Phone is required'
-                                        },
-                                        minLength: {
-                                            value: 11,
-                                            message: 'Phone minimum 11 character'
-                                        }
-                                    })}
-                                    type="number"
-                                    placeholder="Phone"
-                                    class="input input-bordered" />
-                                <label class="label">
-                                    {errors.number?.type === 'required' &&
-                                        <span className="label-text-alt text-red-500">{errors.number?.message}</span>
-                                    }
-                                    {errors.number?.type === 'minLength' &&
-                                        <span className="label-text-alt text-red-500">{errors.number?.message}</span>
                                     }
                                 </label>
                             </div>
