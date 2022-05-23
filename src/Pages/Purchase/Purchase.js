@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 
@@ -9,6 +9,7 @@ const Purchase = () => {
     const [tool, setTool] = useState({});
     const [quantity, setQuantity] = useState(40)
     const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const url = `http://localhost:5000/tools/${id}`;
     useEffect(() => {
@@ -40,6 +41,7 @@ const Purchase = () => {
             .then(data => {
                 console.log(data);
                 toast('Successfully order submitted')
+                navigate('/dashboard');
             })
     }
 

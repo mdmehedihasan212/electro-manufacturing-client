@@ -18,13 +18,11 @@ const Dashboard = () => {
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-
-                    {user ? <>
+                    <li><Link to={'/dashboard/myprofile'}>My Profile</Link></li>
+                    {user && <>
                         <li><Link to={'/dashboard'}>My Orders</Link></li>
                         <li><Link to={'/dashboard/addreview'}>Add A Review</Link></li>
                     </>
-                        :
-                        <li><Link to={'/dashboard/myprofile'}>My Profile</Link></li>
                     }
                 </ul>
 
