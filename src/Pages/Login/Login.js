@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -66,9 +67,10 @@ const Login = () => {
                                     <Link to="/login" class="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                             </div>
-                            <div class="form-control mt-3">
+                            <div class="form-control">
                                 <input class="btn btn-primary text-white" type="submit" value="Login" />
                             </div>
+                            <GoogleLogin></GoogleLogin>
                         </div>
                     </div>
                 </div>
