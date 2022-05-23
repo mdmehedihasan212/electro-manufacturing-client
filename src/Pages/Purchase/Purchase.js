@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 
 const Purchase = () => {
     const { id } = useParams();
     const [tool, setTool] = useState({});
-    const [increase, setIncrease] = useState(0)
+    const [quantity, setQuantity] = useState(40)
     const [user, loading, error] = useAuthState(auth);
 
     const url = `http://localhost:5000/tools/${id}`;
@@ -19,15 +19,38 @@ const Purchase = () => {
             })
     }, [url])
 
-    // const { isLoading, QueryError, data: tool } = useQuery('tool', () => fetch(url).then(res => res.json()))
-    // console.log(tool);
+    const handleSubmit = () => {
+        const orders = {
+            toolName: tool.name,
+            email: user.email,
+            availableQuantity: tool.available_quantity,
+            minimumQuantity: tool.minimum_quantity,
+            quantity: quantity
+        }
 
-    // if (loading || isLoading) {
-    //     return;
-    // }
+        // orders post database
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(orders)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast('Successfully order submitted')
+            })
+    }
 
-    const handleToQuantity = (event) => {
-        console.log(event);
+    const handleIncreaseQuantity = () => {
+        if (quantity < 117)
+            setQuantity(quantity + 1)
+    }
+
+    const handleDecreaseQuantity = () => {
+        if (quantity > 40)
+            setQuantity(quantity - 1)
     }
 
     return (
@@ -36,18 +59,18 @@ const Purchase = () => {
                 <figure>
                     <img className="border-4 p-2" src={tool.image} alt="img" />
                 </figure>
-                <div onClick={handleToQuantity} class="card-body items-center text-center">
+                <div class="card-body items-center text-center">
                     <h2 class="card-title">{tool.name}</h2>
                     <p>{user.email}</p>
                     <p>Available Quantity: {tool.available_quantity}</p>
                     <p>Minimum Quantity: {tool.minimum_quantity}</p>
-                    <p>Order Quantity: 0</p>
+                    <p>Quantity: {quantity}</p>
                     <div class="card-actions">
-                        <button class="btn btn-sm btn-primary text-white">Increase Quantity</button>
-                        <button class="btn btn-sm btn-primary text-white">Decrease Quantity</button>
+                        <button onClick={handleDecreaseQuantity} class="btn btn-sm btn-primary text-white">Decrease Quantity</button>
+                        <button onClick={handleIncreaseQuantity} class="btn btn-sm btn-primary text-white">Increase Quantity</button>
                     </div>
                     <div class="card-actions">
-                        <button class="btn btn-wide btn-primary text-white">Place Order</button>
+                        <button onClick={handleSubmit} class="btn btn-wide btn-primary text-white">Place Order</button>
                     </div>
                 </div>
             </div>
