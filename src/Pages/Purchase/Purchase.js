@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -6,6 +6,7 @@ import auth from '../../firebase/firebase.init';
 
 const Purchase = () => {
     const { id } = useParams();
+    const [increase, setIncrease] = useState(0)
     const [user, loading, error] = useAuthState(auth);
 
     const url = `http://localhost:5000/tools/${id}`;
@@ -16,22 +17,28 @@ const Purchase = () => {
         return;
     }
 
+    const handleToQuantity = (event) => {
+        console.log(event);
+    }
+
     return (
         <section class="hero min-h-screen">
             <div class="card lg:card-side bg-base-100 shadow-xl rounded-none">
                 <figure>
-                    <img className="border-2" src={tool.image} alt="img" />
+                    <img className="border-4 p-2" src={tool.image} alt="img" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div onClick={handleToQuantity} class="card-body items-center text-center">
                     <h2 class="card-title">{tool.name}</h2>
                     <p>{user.email}</p>
-                    <p>available_quantity: {tool.available_quantity}</p>
-                    <p>minimum_quantity: {tool.minimum_quantity}</p>
-                    <p>order_quantity: 0</p>
-
+                    <p>Available Quantity: {tool.available_quantity}</p>
+                    <p>Minimum Quantity: {tool.minimum_quantity}</p>
+                    <p>Order Quantity: 0</p>
                     <div class="card-actions">
-                        <button class="btn btn-primary">Increase</button>
-                        <button class="btn btn-primary">Decrease</button>
+                        <button class="btn btn-sm btn-primary text-white">Increase Quantity</button>
+                        <button class="btn btn-sm btn-primary text-white">Decrease Quantity</button>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-wide btn-primary text-white">Place Order</button>
                     </div>
                 </div>
             </div>

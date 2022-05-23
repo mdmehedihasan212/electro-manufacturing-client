@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import button from '../Shared/PrimaryButton';
 
 const ToolCard = ({ tool }) => {
     const { _id, image, description, available_quantity, minimum_quantity, name, price } = tool;
@@ -22,7 +21,7 @@ const ToolCard = ({ tool }) => {
                 <p className='text-lg'>Price: {price}</p>
                 <p>Description: {description}</p>
                 <div class="mt-2 justify-center">
-                    <button onClick={() => handleToolsDetails(_id)}>Purchase</button>
+                    <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none' onClick={() => handleToolsDetails(_id)}>Purchase</button>
                 </div>
             </div>
         </div>
