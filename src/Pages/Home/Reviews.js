@@ -15,8 +15,8 @@ const Reviews = () => {
                         <div class="hero-content text-center text-neutral-content">
                             <div class="max-w-md">
                                 <div class="avatar">
-                                    <div class="w-24 mask mask-squircle">
-                                        <img src="https://api.lorem.space/image/face?hash=47449" />
+                                    <div class="w-24 rounded-full">
+                                        <img src="https://api.lorem.space/image/face?hash=64318" alt='' />
                                     </div>
                                 </div>
                                 <h1 class="mb-5 text-5xl font-bold"> Kaisinger </h1>
@@ -31,8 +31,8 @@ const Reviews = () => {
                         <div class="hero-content text-center text-neutral-content">
                             <div class="max-w-md">
                                 <div class="avatar">
-                                    <div class="w-24 mask mask-squircle">
-                                        <img src="https://api.lorem.space/image/face?hash=47449" />
+                                    <div class="w-24 rounded-full">
+                                        <img src="https://api.lorem.space/image/face?hash=47449" alt='' />
                                     </div>
                                 </div>
                                 <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
@@ -47,8 +47,8 @@ const Reviews = () => {
                         <div class="hero-content text-center text-neutral-content">
                             <div class="max-w-md">
                                 <div class="avatar">
-                                    <div class="w-24 mask mask-squircle">
-                                        <img src="https://api.lorem.space/image/face?hash=47449" />
+                                    <div class="w-24 rounded-full">
+                                        <img src="https://api.lorem.space/image/face?hash=47449" alt='' />
                                     </div>
                                 </div>
                                 <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
@@ -63,8 +63,8 @@ const Reviews = () => {
                         <div class="hero-content text-center text-neutral-content">
                             <div class="max-w-md">
                                 <div class="avatar">
-                                    <div class="w-24 mask mask-squircle">
-                                        <img src="https://api.lorem.space/image/face?hash=47449" />
+                                    <div class="w-24 rounded-full">
+                                        <img src="https://api.lorem.space/image/face?hash=47449" alt='' />
                                     </div>
                                 </div>
                                 <h1 class="mb-5 text-5xl font-bold">Hello there</h1>

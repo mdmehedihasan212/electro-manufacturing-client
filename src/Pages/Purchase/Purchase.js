@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -6,16 +6,25 @@ import auth from '../../firebase/firebase.init';
 
 const Purchase = () => {
     const { id } = useParams();
+    const [tool, setTool] = useState({});
     const [increase, setIncrease] = useState(0)
     const [user, loading, error] = useAuthState(auth);
 
     const url = `http://localhost:5000/tools/${id}`;
-    const { isLoading, QueryError, data: tool } = useQuery('tool', () => fetch(url).then(res => res.json()))
-    console.log(tool);
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setTool(data)
+            })
+    }, [url])
 
-    if (loading || isLoading) {
-        return;
-    }
+    // const { isLoading, QueryError, data: tool } = useQuery('tool', () => fetch(url).then(res => res.json()))
+    // console.log(tool);
+
+    // if (loading || isLoading) {
+    //     return;
+    // }
 
     const handleToQuantity = (event) => {
         console.log(event);

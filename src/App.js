@@ -10,6 +10,9 @@ import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import RequireAuth from './RequireAuth/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -22,11 +25,15 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
       </Routes>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );
