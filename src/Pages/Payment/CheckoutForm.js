@@ -1,12 +1,10 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
 
 const CheckoutForm = ({ paid }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
-    const [method, setMethod] = useState('');
     const [clientSecret, setClientSecret] = useState("");
 
     const { price } = paid;
@@ -21,23 +19,25 @@ const CheckoutForm = ({ paid }) => {
     // )
     // console.log(clientSecret);
 
-    // useEffect(() => {
-    //     // Create PaymentIntent as soon as the page loads
-    //     fetch("http://localhost:5000/create-payment-intent", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({ price }),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data.clientSecret);
-    //             if (data.clientSecret) {
-    //                 setClientSecret(data.clientSecret)
-    //             }
-    //         });
-    // }, [price]);
+    useEffect(() => {
+        // Create PaymentIntent as soon as the page loads
+        const url = "http://localhost:5000/create-payment-intent";
+        console.log(url);
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ price }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.clientSecret);
+                if (data.clientSecret) {
+                    setClientSecret(data.clientSecret)
+                }
+            });
+    }, [price]);
 
 
     const handleSubmit = async (event) => {
@@ -63,11 +63,9 @@ const CheckoutForm = ({ paid }) => {
 
         if (error) {
             setCardError(error.message);
-            setMethod('')
         }
         else {
             setCardError('');
-            setMethod(paymentMethod.message)
         }
     }
 
@@ -90,7 +88,6 @@ const CheckoutForm = ({ paid }) => {
                 }}
             />
             <p className='text-red-500 mt-2'>{cardError}</p>
-            <p className='text-yellow-500 mt-2'>{method}</p>
             <div class="form-control mt-6">
                 <button type="submit" disabled={!stripe || !clientSecret} class="btn btn-primary text-white">Payment</button>
             </div>
