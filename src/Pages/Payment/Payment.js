@@ -22,15 +22,14 @@ const Payment = () => {
         <div class="hero min-h-screen">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div class="card-body">
-                    <h2 class="card-title text-primary">Tool Name: {paid.toolName}</h2>
-                    <h2 class="card-title">Please Pay: {paid?.price}</h2>
-                </div>
-                <div class="card-body">
-                    <h2 class="card-title text-primary mb-2">Card Details</h2>
+                    <p>Tool Name: {paid.toolName}</p>
+                    <p>Please Pay: {paid.price}</p>
+                    <p class="card-title text-secondary mb-2">Card Details</p>
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm />
+                        <CheckoutForm paid={paid} />
                     </Elements>
                 </div>
+
             </div>
         </div>
     );
