@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Order = ({ order, index }) => {
-    const { toolName, email, quantity } = order;
+const Order = ({ order, index, refetch }) => {
+    const { _id, toolName, email, quantity } = order;
+    const navigate = useNavigate();
 
     const handleToDelete = () => {
         fetch(`http://localhost:5000/orders/${email}`, {
@@ -12,8 +14,13 @@ const Order = ({ order, index }) => {
                 if (data.deletedCount) {
                     window.confirm(`Are you sure cancel your ${toolName} order`)
                 }
+                refetch()
                 console.log(data);
             })
+    }
+
+    const handleToPaid = id => {
+        navigate(`/payment/${id}`)
     }
 
     return (
@@ -24,6 +31,9 @@ const Order = ({ order, index }) => {
             <td>{quantity} Pic</td>
             <td>
                 <button onClick={handleToDelete} class="btn btn-sm">Cancel</button>
+            </td>
+            <td>
+                <button onClick={() => handleToPaid(_id)} class="btn btn-sm">Paid</button>
             </td>
         </tr>
     );

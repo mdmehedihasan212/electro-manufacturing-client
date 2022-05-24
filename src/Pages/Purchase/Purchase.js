@@ -11,15 +11,14 @@ const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
 
-    const url = `http://localhost:5000/tools/${id}`;
-    console.log(url);
     useEffect(() => {
+        const url = `http://localhost:5000/tools/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 setTool(data)
             })
-    }, [url])
+    }, [id])
 
     const handleSubmit = () => {
         const orders = {
@@ -40,7 +39,6 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 toast('Successfully order submitted')
                 navigate('/dashboard');
             })
