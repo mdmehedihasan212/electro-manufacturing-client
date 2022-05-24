@@ -12,6 +12,7 @@ const Purchase = () => {
     const navigate = useNavigate();
 
     const url = `http://localhost:5000/tools/${id}`;
+    console.log(url);
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
