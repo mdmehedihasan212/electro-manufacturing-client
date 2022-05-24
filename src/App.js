@@ -14,6 +14,7 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Payment/Payment';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path='/payment/:id' element={<Payment></Payment>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>

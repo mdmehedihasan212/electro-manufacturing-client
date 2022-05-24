@@ -19,24 +19,24 @@ const MyProfile = () => {
         }
         console.log(updateProfile);
 
-        // fetch("http://localhost:5000/update", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(updateProfile),
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         toast('Successfully update user information')
-        //     });
+        fetch("http://localhost:5000/update", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateProfile),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                toast('Successfully update user information')
+            });
     }
 
     return (
         <div class="hero min-h-screen">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div class="card-body">
-                    <h1 className='text-2xl my-3 text-primary'>Update Profile</h1>
+                    <h1 className='text-2xl mb-3 text-primary'>Update Profile</h1>
                     <form onSubmit={handleSubmit} class="form-control">
                         <input type="text" value={user?.displayName} disabled class="input input-bordered mb-2" />
                         <input type="text" value={user?.email} disabled class="input input-bordered mb-2" />
