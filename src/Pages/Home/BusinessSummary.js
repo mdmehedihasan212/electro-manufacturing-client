@@ -8,34 +8,34 @@ const BusinessSummary = () => {
     return (
         <div className='my-12'>
             <h1 className='text-4xl text-center'>Business Summary</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-2/3 mx-auto mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 w-full mx-auto mt-12">
 
-                <div class="stat">
-                    <img className='w-1/2' src={customer} alt="img" />
-                    <div class="stat-title">Customers</div>
-                    <div class="stat-value">100+</div>
-                    <div class="stat-desc">Jan 1st - May 1st</div>
+                <div class="items-center text-center">
+                    <img className='w-8 lg:w-12 mx-auto' src={customer} alt="img" />
+                    <div>Customers</div>
+                    <div class="text-5xl lg:text-7xl font-bold">100+</div>
+                    <div>Jan 1st - May 1st</div>
                 </div>
 
-                <div class="stat">
-                    <img className='w-1/2' src={revenue} alt="img" />
-                    <div class="stat-title">Annual revenue</div>
-                    <div class="stat-value">120M+</div>
-                    <div class="stat-desc">Jan 1st - May 1st</div>
+                <div class="items-center text-center">
+                    <img className='w-8 lg:w-12 mx-auto' src={revenue} alt="img" />
+                    <div>Annual revenue</div>
+                    <div class="text-5xl lg:text-7xl font-bold">120M+</div>
+                    <div>Jan 1st - May 1st</div>
                 </div>
 
-                <div class="stat">
-                    <img className='w-1/2' src={reviews} alt="img" />
-                    <div class="stat-title"> Reviews</div>
-                    <div class="stat-value">33K</div>
-                    <div class="stat-desc">Jan 1st - May 1st</div>
+                <div class="items-center text-center">
+                    <img className='w-8 lg:w-12 mx-auto' src={reviews} alt="img" />
+                    <div> Reviews</div>
+                    <div class="text-5xl lg:text-7xl font-bold">33K</div>
+                    <div>Jan 1st - May 1st</div>
                 </div>
 
-                <div class="stat">
-                    <img className='w-1/2' src={tools} alt="img" />
-                    <div class="stat-title">Tools</div>
-                    <div class="stat-value">50+</div>
-                    <div class="stat-desc">Jan 1st - May 1st</div>
+                <div class="items-center text-center">
+                    <img className='w-8 lg:w-12 mx-auto' src={tools} alt="img" />
+                    <div>Tools</div>
+                    <div class="text-5xl lg:text-7xl font-bold">50+</div>
+                    <div>Jan 1st - May 1st</div>
                 </div>
 
             </div>

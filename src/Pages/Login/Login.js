@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react';
+import { async } from '@firebase/util';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link as p, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
+import Loading from '../Shared/Loading';
 import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [email, setEmail] = useState('');
     const [
         signInWithEmailAndPassword,
         user,
@@ -25,10 +29,13 @@ const Login = () => {
         }
     }, [user])
 
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     const onSubmit = data => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
-        toast('Successfully Sign In With Email')
     };
 
     return (
@@ -51,6 +58,7 @@ const Login = () => {
                                         }
                                     })}
                                     type="email"
+                                    onChange={(event) => setEmail(event.target.value)}
                                     placeholder="Email"
                                     class="input input-bordered" />
                                 <label class="label">
@@ -86,7 +94,11 @@ const Login = () => {
                                     }
                                 </label>
                                 <label class="label">
-                                    <Link to="/login" class="label-text-alt link link-hover">Forgot password?</Link>
+                                    <button onClick={async () => {
+                                        await sendPasswordResetEmail(email);
+                                        toast('Send Password Reset Email');
+                                    }}
+                                        class="link link-hover">Forgot password?</button>
                                 </label>
                             </div>
                             <div class="form-control">
@@ -96,8 +108,8 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 };
 

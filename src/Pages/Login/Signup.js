@@ -1,7 +1,7 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link as p } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 import GoogleLogin from './GoogleLogin';
@@ -14,7 +14,10 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [sendPasswordResetEmail, sending, ResetError] = useSendPasswordResetEmail(auth);
 
     const onSubmit = async data => {
         console.log(data)
@@ -101,9 +104,6 @@ const Signup = () => {
                                     {errors.password?.type === 'minLength' &&
                                         <span className="label-text-alt text-red-500">{errors.password?.message}</span>
                                     }
-                                </label>
-                                <label class="label">
-                                    <Link to="/login" class="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                             </div>
                             <div class="form-control">
