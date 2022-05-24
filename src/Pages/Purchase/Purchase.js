@@ -23,6 +23,7 @@ const Purchase = () => {
     const handleSubmit = () => {
         const orders = {
             toolName: tool.name,
+            price: tool.price,
             email: user.email,
             availableQuantity: tool.available_quantity,
             minimumQuantity: tool.minimum_quantity,
@@ -60,12 +61,13 @@ const Purchase = () => {
                 <figure>
                     <img className="border-4 p-2" src={tool.image} alt="img" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title">{tool.name}</h2>
-                    <p>{user.email}</p>
+                <div class="card-body items-center">
+                    <h2 class="card-title">Name: {tool.name}</h2>
+                    <p>Price: {tool.price}</p>
+                    <p>Email: {user.email}</p>
                     <p>Available Quantity: {tool.available_quantity}</p>
                     <p>Minimum Quantity: {tool.minimum_quantity}</p>
-                    <p>Quantity: {quantity}</p>
+                    <p>Order Quantity: {quantity}</p>
                     <div class="card-actions">
                         <button onClick={handleDecreaseQuantity} class="btn btn-sm btn-primary text-white">Decrease Quantity</button>
                         <button onClick={handleIncreaseQuantity} class="btn btn-sm btn-primary text-white">Increase Quantity</button>

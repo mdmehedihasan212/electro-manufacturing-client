@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, refetch }) => {
-    const { _id, toolName, email, quantity } = order;
+    const { _id, toolName, email, quantity, price } = order;
     const navigate = useNavigate();
 
     const handleToDelete = () => {

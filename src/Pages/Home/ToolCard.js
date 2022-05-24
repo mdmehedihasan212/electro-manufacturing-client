@@ -7,9 +7,7 @@ const ToolCard = ({ tool }) => {
     const navigate = useNavigate();
 
     const handleToolsDetails = id => {
-        console.log(id);
         navigate(`/purchase/${id}`)
-        console.log('Navigate');
     }
 
     return (
