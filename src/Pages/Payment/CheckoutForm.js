@@ -10,7 +10,7 @@ const CheckoutForm = ({ paid }) => {
     const { price } = paid;
 
     // const { data: clientSecret, isLoading, refatch } = useQuery(['clientSecret', price], () =>
-    //     fetch('http://localhost:5000/create-payment-intent', {
+    //     fetch('https://enigmatic-taiga-40573.herokuapp.com/create-payment-intent', {
     //         method: 'POST',
     //         headers: {
     //             "Content-Type": "application/json"
@@ -21,7 +21,7 @@ const CheckoutForm = ({ paid }) => {
 
     // useEffect(() => {
     //     // Create PaymentIntent as soon as the page loads
-    //     const url = "http://localhost:5000/create-payment-intent";
+    //     const url = "https://enigmatic-taiga-40573.herokuapp.com/create-payment-intent";
     //     console.log(url);
     //     fetch(url, {
     //         method: "POST",

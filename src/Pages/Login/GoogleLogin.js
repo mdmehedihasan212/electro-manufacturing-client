@@ -1,14 +1,16 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 
 const GoogleLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
 
     const GoogleSign = () => {
         signInWithGoogle()
-        toast('Successfully Sign In With Google')
+        navigate('/')
     }
 
     return (

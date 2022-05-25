@@ -19,7 +19,7 @@ const MyProfile = () => {
         }
         console.log(updateProfile);
 
-        fetch("http://localhost:5000/update", {
+        fetch("https://enigmatic-taiga-40573.herokuapp.com/update", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

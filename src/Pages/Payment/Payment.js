@@ -11,7 +11,7 @@ const Payment = () => {
     const [paid, setPaid] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPaid(data);

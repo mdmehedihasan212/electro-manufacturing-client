@@ -13,10 +13,10 @@ const Banner = () => {
                     <div class="hero-overlay bg-opacity-60"></div>
                     <div class="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xl'>Electro Manufacturing</small>
-                            <h1 class="mb-1 text-7xl font-bold text-primary">Committed</h1>
-                            <h2 className='mb-5 text-7xl'>To Super Quality</h2>
-                            <p className='mb-5 text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 class="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
                             <PrimaryButton>Go to Shop</PrimaryButton>
                         </div>
                     </div>

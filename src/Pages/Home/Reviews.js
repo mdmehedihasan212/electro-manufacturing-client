@@ -5,7 +5,7 @@ import banner from '../../assets/Banner/banner-1.webp';
 const Reviews = () => {
 
     const { data: reviews, isLoading, refetch } = useQuery('review', () =>
-        fetch(`http://localhost:5000/review`).then(res =>
+        fetch(`https://enigmatic-taiga-40573.herokuapp.com/review`).then(res =>
             res.json()
         )
     )

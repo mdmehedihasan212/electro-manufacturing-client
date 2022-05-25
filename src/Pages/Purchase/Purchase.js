@@ -12,7 +12,7 @@ const Purchase = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${id}`;
+        const url = `https://enigmatic-taiga-40573.herokuapp.com/tools/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -31,7 +31,7 @@ const Purchase = () => {
         }
 
         // orders post database
-        fetch('http://localhost:5000/orders', {
+        fetch('https://enigmatic-taiga-40573.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

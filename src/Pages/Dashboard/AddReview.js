@@ -12,7 +12,7 @@ const AddReview = () => {
         }
         console.log(reviews);
 
-        fetch("http://localhost:5000/review", {
+        fetch("https://enigmatic-taiga-40573.herokuapp.com/review", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

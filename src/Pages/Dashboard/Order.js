@@ -6,7 +6,7 @@ const Order = ({ order, index, refetch }) => {
     const navigate = useNavigate();
 
     const handleToDelete = () => {
-        fetch(`http://localhost:5000/orders/${email}`, {
+        fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${email}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
