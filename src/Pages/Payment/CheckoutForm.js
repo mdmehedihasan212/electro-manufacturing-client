@@ -19,25 +19,25 @@ const CheckoutForm = ({ paid }) => {
     // )
     // console.log(clientSecret);
 
-    useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
-        const url = "http://localhost:5000/create-payment-intent";
-        console.log(url);
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ price }),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data.clientSecret);
-                if (data.clientSecret) {
-                    setClientSecret(data.clientSecret)
-                }
-            });
-    }, [price]);
+    // useEffect(() => {
+    //     // Create PaymentIntent as soon as the page loads
+    //     const url = "http://localhost:5000/create-payment-intent";
+    //     console.log(url);
+    //     fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({ price }),
+    //     })
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             console.log(data.clientSecret);
+    //             if (data.clientSecret) {
+    //                 setClientSecret(data.clientSecret)
+    //             }
+    //         });
+    // }, [price]);
 
 
     const handleSubmit = async (event) => {
