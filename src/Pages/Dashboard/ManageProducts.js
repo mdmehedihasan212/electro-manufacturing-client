@@ -7,13 +7,15 @@ const ManageProducts = () => {
 
     return (
         <div class="overflow-x-auto w-full">
-            <table class="table w-full">
+            <table class="table w-full text-center">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
                         <th></th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+
                     </tr>
                 </thead>
                 <tbody>

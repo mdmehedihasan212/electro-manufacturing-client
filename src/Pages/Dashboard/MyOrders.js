@@ -24,7 +24,7 @@ const MyOrders = () => {
                         <tr>
                             <th></th>
                             <th>Tool Name</th>
-                            <th>Email</th>
+                            <th>Price</th>
                             <th>Order</th>
                             <th>Action</th>
                             <th>Status</th>

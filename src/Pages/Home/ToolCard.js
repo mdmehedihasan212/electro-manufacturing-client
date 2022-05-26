@@ -19,7 +19,7 @@ const ToolCard = ({ tool }) => {
                 <h1 className='text-xl'>Name: {name}</h1>
                 <p className='text-base'>Available Quantity: {available_quantity}</p>
                 <p className='text-base'>Minimum Quantity: {minimum_quantity}</p>
-                <p className='text-base'>Price: {price}</p>
+                <p className='text-base'>Price: ${price}</p>
                 <p>Description: {description}</p>
                 <div className="mt-2 justify-center">
                     <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none' onClick={() => handleToolsDetails(_id)}>Purchase</button>

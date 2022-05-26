@@ -1,33 +1,45 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const ManageProductCard = ({ product, index }) => {
+    const { _id, image, name, price } = product;
+    console.log(product);
+
+    const handleToDelete = () => {
+        fetch(`http://localhost:5000/tools/${_id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    console.log(data);
+                }
+            })
+    }
+
     return (
-        <div>
-            <tr>
-                <td>
-                    <div class="flex items-center space-x-3">
-                        <div class="avatar">
-                            <div class="mask mask-squircle w-12 h-12">
-                                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                            </div>
-                        </div>
-                        <div>
-                            <div class="font-bold">Hart Hagerty</div>
-                            <div class="text-sm opacity-50">United States</div>
-                        </div>
+        <tr>
+            <td className='font-bold'>{index + 1}</td>
+            <td>
+                <div class="avatar">
+                    <div class="w-16 rounded ring ring-primary">
+                        <img src={image} alt="img" />
                     </div>
-                </td>
-                <td>
-                    Zemlak, Daniel and Leannon
-                    <br />
-                    <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                </td>
-                <td>Purple</td>
-                <th>
-                    <button class="btn btn-ghost btn-xs">details</button>
-                </th>
-            </tr>
-        </div>
+                </div>
+            </td>
+            <td>{name}</td>
+            <td>${price}</td>
+            <td>
+                <button
+                    onClick={() => handleToDelete(_id)}
+                    className="btn btn-error btn-sm text-white">
+                    Delete
+                </button>
+            </td>
+        </tr>
     );
 };
 

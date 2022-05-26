@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, refetch }) => {
-    const { _id, toolName, email, quantity } = order;
+    const { _id, toolName, price, quantity, email } = order;
     const navigate = useNavigate();
 
     const handleToDelete = () => {
@@ -29,7 +29,7 @@ const Order = ({ order, index, refetch }) => {
         <tr className='text-center'>
             <th>{index + 1}</th>
             <td>{toolName}</td>
-            <td>{email}</td>
+            <td>${price}</td>
             <td>{quantity} Pic</td>
             <td>
                 <button
