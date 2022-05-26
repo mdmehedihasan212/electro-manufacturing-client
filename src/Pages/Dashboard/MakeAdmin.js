@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase/firebase.init';
 import Users from './Users';
 
 const MakeAdmin = () => {
+    const [authUser, loading] = useAuthState(auth);
     const [users, setUsers] = useState([])
 
     useEffect(() => {
@@ -20,6 +23,7 @@ const MakeAdmin = () => {
                     <thead>
                         <tr>
                             <th></th>
+                            <th>User Name</th>
                             <th>User Email</th>
                             <th>Role</th>
                             <th>Action</th>
@@ -31,6 +35,7 @@ const MakeAdmin = () => {
                                 key={user._id}
                                 user={user}
                                 index={index}
+                                authUser={authUser}
                             ></Users>)
                         }
                     </tbody>

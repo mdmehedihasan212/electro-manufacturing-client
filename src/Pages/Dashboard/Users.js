@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Users = ({ user, index }) => {
+const Users = ({ user, index, authUser }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
@@ -20,6 +20,7 @@ const Users = ({ user, index }) => {
     return (
         <tr>
             <th>{index + 1}</th>
+            <td>{authUser.displayName}</td>
             <td>{user.email}</td>
             <td>
                 {

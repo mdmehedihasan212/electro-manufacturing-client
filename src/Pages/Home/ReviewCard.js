@@ -6,7 +6,7 @@ const ReviewCard = ({ userReview }) => {
     return (
         <div className="card bg-base-100 shadow-xl rounded-none">
             <div className="avatar">
-                <div className="w-24 mx-auto rounded-xl">
+                <div className="w-24 mx-auto ring ring-primary rounded-full mt-4">
                     <img src={image} alt='img' />
                 </div>
             </div>

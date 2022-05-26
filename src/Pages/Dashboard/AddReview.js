@@ -32,17 +32,21 @@ const AddReview = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmit}>
                             <h1 className='text-xl text-primary text-center mb-1'>Please select your ratings</h1>
-                            <div className="rating rating-md my-4">
-                                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" checked />
-                                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                            <div class="rating my-4">
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" checked />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
                             </div>
-                            <input type="text" name='link' placeholder='Photo Link' className="input input-bordered w-3/4 max-w-xs mb-3" required />
-                            <input type="text" name='name' placeholder="Name" className="input input-bordered w-3/4 max-w-xs mb-3" required />
-                            <textarea type="text" name='review' className="textarea textarea-bordered w-3/4" placeholder="Description" required></textarea>
-                            <button type="submit" className="mt-4 btn btn-primary text-white w-1/2">Submit</button>
+                            <div>
+                                <input type="text" name='link' placeholder='Photo Link' class="input input-bordered w-full max-w-xs mb-3" required /><input type="text" name='name' placeholder="Name"
+                                    class="input input-bordered w-full max-w-xs mb-3" required />
+                                <textarea type="text" name='review' class="textarea textarea-bordered w-full" placeholder="Write your review" required></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" className="mt-4 btn btn-primary text-white w-1/2">Submit</button>
+                            </div>
                         </form>
 
                     </div>

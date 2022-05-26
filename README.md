@@ -11,3 +11,5 @@
 * I use react query for load data for extra options (like refetch).
 * I use react router for good experience navigation.
 * I use react toastify for some toast.
+* I use react icon for some icon.
+* I use animation css for some good ux.

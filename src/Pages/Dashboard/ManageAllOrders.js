@@ -1,14 +1,17 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import auth from '../../firebase/firebase.init';
 import Loading from '../Shared/Loading';
 import ManageOrderCard from './ManageOrderCard';
 
 const ManageAllOrders = () => {
-
-    const { data: orders, isLoading, refetch } = useQuery(['orders'], () =>
+    const [user, loading] = useAuthState(auth);
+    console.log(user);
+    const { data: orders, isLoading } = useQuery(['orders'], () =>
         fetch('http://localhost:5000/orders').then(res => res.json()))
 
-    if (isLoading) {
+    if (isLoading || loading) {
         return <Loading></Loading>
     }
 
@@ -22,6 +25,7 @@ const ManageAllOrders = () => {
                             <th>Name</th>
                             <th>Price</th>
                             <th>Order</th>
+                            <th>User</th>
                             <th>Action</th>
                             <th>Status</th>
                         </tr>
@@ -32,7 +36,7 @@ const ManageAllOrders = () => {
                                 key={order._id}
                                 order={order}
                                 index={index}
-                                refetch={refetch}
+                                user={user}
                             ></ManageOrderCard>)
                         }
                     </tbody>

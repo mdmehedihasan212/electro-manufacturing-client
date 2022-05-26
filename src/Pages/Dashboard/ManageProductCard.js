@@ -25,7 +25,7 @@ const ManageProductCard = ({ product, index }) => {
             <td className='font-bold'>{index + 1}</td>
             <td>
                 <div class="avatar">
-                    <div class="w-16 rounded ring ring-primary">
+                    <div class="w-16 border-2">
                         <img src={image} alt="img" />
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ManageOrderCard = ({ order, index, refetch }) => {
-    const { _id, toolName, price, quantity, email } = order;
+const ManageOrderCard = ({ order, index, user }) => {
+    const { toolName, price, quantity } = order;
 
     return (
         <tr className='text-center'>
@@ -9,6 +9,7 @@ const ManageOrderCard = ({ order, index, refetch }) => {
             <td>{toolName}</td>
             <td>${price}</td>
             <td>{quantity} Pic</td>
+            <td>{user.displayName}</td>
             <td>
                 <button className="btn btn-error btn-sm text-white">Cancel</button>
             </td>

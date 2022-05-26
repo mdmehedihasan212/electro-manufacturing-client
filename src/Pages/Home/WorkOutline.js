@@ -5,7 +5,7 @@ import { BsFillCreditCardFill } from 'react-icons/bs';
 
 const WorkOutline = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-6 px-12 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 mb-8 gap-4'>
             <div className="flex justify-center items-center w-96 bg-base-100 shadow-xl">
                 <GrDeliver className='w-1/2 h-1/2 ml-6'></GrDeliver>
                 <div className="card-body">

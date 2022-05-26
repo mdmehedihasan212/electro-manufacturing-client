@@ -57,11 +57,11 @@ const Purchase = () => {
         <section className="hero min-h-screen">
             <div className="card lg:card-side bg-base-100 shadow-xl rounded-none">
                 <figure>
-                    <img className="border-4 p-2" src={tool.image} alt="img" />
+                    <img src={tool.image} alt="img" />
                 </figure>
                 <div className="card-body items-center">
                     <h2 className="card-title">Name: {tool.name}</h2>
-                    <p>Price: {tool.price}</p>
+                    <p>Price: ${tool.price}</p>
                     <p>Email: {user.email}</p>
                     <p>Available Quantity: {tool.available_quantity}</p>
                     <p>Minimum Quantity: {tool.minimum_quantity}</p>
