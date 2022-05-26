@@ -18,8 +18,8 @@ const MyOrders = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead className='text-center'>
                         <tr>
                             <th></th>
@@ -36,6 +36,7 @@ const MyOrders = () => {
                                 key={order._id}
                                 order={order}
                                 index={index}
+                                refetch={refetch}
                             ></Order>)
                         }
                     </tbody>

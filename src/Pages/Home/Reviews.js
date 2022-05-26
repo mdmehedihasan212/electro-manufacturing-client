@@ -13,7 +13,7 @@ const Reviews = () => {
     return (
         <div>
             <h1 className='text-4xl text-center my-12'>Reviews</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mx-auto px-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mx-auto px-12">
                 {
                     reviews?.slice(0, 8).map(userReview => <ReviewCard
                         key={userReview._id}

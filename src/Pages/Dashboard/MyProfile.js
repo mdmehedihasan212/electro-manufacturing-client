@@ -33,19 +33,19 @@ const MyProfile = () => {
     }
 
     return (
-        <div class="hero min-h-screen">
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div class="card-body">
+        <div className="hero min-h-screen">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card-body">
                     <h1 className='text-2xl mb-3 text-primary'>Update Profile</h1>
-                    <form onSubmit={handleSubmit} class="form-control">
-                        <input type="text" value={user?.displayName} disabled class="input input-bordered mb-2" />
-                        <input type="text" value={user?.email} disabled class="input input-bordered mb-2" />
-                        <input type="text" name='education' placeholder='Education' class="input input-bordered mb-2" />
-                        <input type="text" name='city' placeholder='City' class="input input-bordered mb-2" />
-                        <input type="text" name='link' placeholder='LinkedIn Profile Link' class="input input-bordered mb-2" />
-                        <input type="number" name='number' placeholder='Phone Number' class="input input-bordered mb-2" />
-                        <div class="form-control mt-3">
-                            <button type='submit' class="btn btn-primary text-white">Update Profile</button>
+                    <form onSubmit={handleSubmit} className="form-control">
+                        <input type="text" value={user?.displayName} disabled className="input input-bordered mb-2" />
+                        <input type="text" value={user?.email} disabled className="input input-bordered mb-2" />
+                        <input type="text" name='education' placeholder='Education' className="input input-bordered mb-2" />
+                        <input type="text" name='city' placeholder='City' className="input input-bordered mb-2" />
+                        <input type="text" name='link' placeholder='LinkedIn Profile Link' className="input input-bordered mb-2" />
+                        <input type="number" name='number' placeholder='Phone Number' className="input input-bordered mb-2" />
+                        <div className="form-control mt-3">
+                            <button type='submit' className="btn btn-primary text-white">Update Profile</button>
                         </div>
                     </form>
                 </div>

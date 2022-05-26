@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 
@@ -9,7 +9,6 @@ const Purchase = () => {
     const [tool, setTool] = useState({});
     const [quantity, setQuantity] = useState(40)
     const [user, loading, error] = useAuthState(auth);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const url = `https://enigmatic-taiga-40573.herokuapp.com/tools/${id}`;
@@ -41,7 +40,6 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => {
                 toast('Successfully order submitted')
-                navigate('/dashboard');
             })
     }
 
@@ -56,24 +54,24 @@ const Purchase = () => {
     }
 
     return (
-        <section class="hero min-h-screen">
-            <div class="card lg:card-side bg-base-100 shadow-xl rounded-none">
+        <section className="hero min-h-screen">
+            <div className="card lg:card-side bg-base-100 shadow-xl rounded-none">
                 <figure>
                     <img className="border-4 p-2" src={tool.image} alt="img" />
                 </figure>
-                <div class="card-body items-center">
-                    <h2 class="card-title">Name: {tool.name}</h2>
+                <div className="card-body items-center">
+                    <h2 className="card-title">Name: {tool.name}</h2>
                     <p>Price: {tool.price}</p>
                     <p>Email: {user.email}</p>
                     <p>Available Quantity: {tool.available_quantity}</p>
                     <p>Minimum Quantity: {tool.minimum_quantity}</p>
                     <p>Order Quantity: {quantity}</p>
-                    <div class="card-actions">
-                        <button onClick={handleDecreaseQuantity} class="btn btn-sm btn-primary text-white">Decrease Quantity</button>
-                        <button onClick={handleIncreaseQuantity} class="btn btn-sm btn-primary text-white">Increase Quantity</button>
+                    <div className="card-actions">
+                        <button onClick={handleDecreaseQuantity} className="btn btn-sm btn-primary text-white">Decrease Quantity</button>
+                        <button onClick={handleIncreaseQuantity} className="btn btn-sm btn-primary text-white">Increase Quantity</button>
                     </div>
-                    <div class="card-actions">
-                        <button onClick={handleSubmit} class="btn btn-wide btn-primary text-white">Place Order</button>
+                    <div className="card-actions">
+                        <button onClick={handleSubmit} className="btn btn-wide btn-primary text-white">Place Order</button>
                     </div>
                 </div>
             </div>

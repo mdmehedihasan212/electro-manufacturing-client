@@ -18,7 +18,7 @@ const AddProduct = () => {
             description: event.target.description.value,
         }
 
-        fetch("http://localhost:5000/add-product", {
+        fetch("https://enigmatic-taiga-40573.herokuapp.com/add-product", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -32,19 +32,19 @@ const AddProduct = () => {
     }
 
     return (
-        <div class="hero min-h-screen">
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div class="card-body">
+        <div className="hero min-h-screen">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card-body">
                     <h1 className='text-2xl mb-3 text-primary'>Add Product</h1>
-                    <form onSubmit={handleSubmit} class="form-control">
-                        <input type="text" name='name' placeholder='Name' class="input input-bordered mb-2" />
-                        <input type="number" name='price' placeholder='Price' class="input input-bordered mb-2" />
-                        <input type="number" name='availableQuantity' placeholder='Available Quantity' class="input input-bordered mb-2" />
-                        <input type="number" name='minimumQuantity' placeholder='Minimum Quantity' class="input input-bordered mb-2" />
-                        <input type="text" name='link' placeholder='Photo Link' class="input input-bordered mb-2" />
-                        <textarea class="textarea textarea-bordered" name='description' placeholder='Description'></textarea>
-                        <div class="form-control mt-3">
-                            <button type='submit' class="btn btn-primary text-white">Add Product</button>
+                    <form onSubmit={handleSubmit} className="form-control">
+                        <input type="text" name='name' placeholder='Name' className="input input-bordered mb-2" />
+                        <input type="number" name='price' placeholder='Price' className="input input-bordered mb-2" />
+                        <input type="number" name='availableQuantity' placeholder='Available Quantity' className="input input-bordered mb-2" />
+                        <input type="number" name='minimumQuantity' placeholder='Minimum Quantity' className="input input-bordered mb-2" />
+                        <input type="text" name='link' placeholder='Photo Link' className="input input-bordered mb-2" />
+                        <textarea className="textarea textarea-bordered" name='description' placeholder='Description'></textarea>
+                        <div className="form-control mt-3">
+                            <button type='submit' className="btn btn-primary text-white">Add Product</button>
                         </div>
                     </form>
                 </div>

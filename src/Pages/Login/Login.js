@@ -42,11 +42,11 @@ const Login = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div class="hero min-h-screen">
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="hero min-h-screen">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <h1 className='text-4xl text-center text-primary mt-6'>Login</h1>
-                        <div class="card-body">
-                            <div class="form-control">
+                        <div className="card-body">
+                            <div className="form-control">
                                 <input
                                     {...register("email", {
                                         required: {
@@ -61,8 +61,8 @@ const Login = () => {
                                     type="email"
                                     onChange={(event) => setEmail(event.target.value)}
                                     placeholder="Email"
-                                    class="input input-bordered" />
-                                <label class="label">
+                                    className="input input-bordered" />
+                                <label className="label">
                                     {errors.email?.type === 'required' &&
                                         <span className="label-text-alt text-red-500">{errors.email?.message}</span>
                                     }
@@ -71,7 +71,7 @@ const Login = () => {
                                     }
                                 </label>
                             </div>
-                            <div class="form-control">
+                            <div className="form-control">
                                 <input
                                     {...register("password", {
                                         required: {
@@ -85,8 +85,8 @@ const Login = () => {
                                     })}
                                     type="password"
                                     placeholder="Password"
-                                    class="input input-bordered" />
-                                <label class="label">
+                                    className="input input-bordered" />
+                                <label className="label">
                                     {errors.password?.type === 'required' &&
                                         <span className="label-text-alt text-red-500">{errors.password?.message}</span>
                                     }
@@ -94,16 +94,16 @@ const Login = () => {
                                         <span className="label-text-alt text-red-500">{errors.password?.message}</span>
                                     }
                                 </label>
-                                <label class="label">
+                                <label className="label">
                                     <button onClick={async () => {
                                         await sendPasswordResetEmail(email);
                                         toast('Send Password Reset Email');
                                     }}
-                                        class="link link-hover">Forgot password?</button>
+                                        className="link link-hover">Forgot password?</button>
                                 </label>
                             </div>
-                            <div class="form-control">
-                                <input class="btn btn-primary text-white" type="submit" value="Login" />
+                            <div className="form-control">
+                                <input className="btn btn-primary text-white" type="submit" value="Login" />
                             </div>
                             <GoogleLogin></GoogleLogin>
                         </div>

@@ -20,9 +20,9 @@ const GoogleLogin = () => {
     }
 
     return (
-        <div class="form-control">
-            <div class="divider">or</div>
-            <input onClick={GoogleSign} class="btn btn-primary text-white" type="submit" value="Continue With Google" />
+        <div className="form-control">
+            <div className="divider">or</div>
+            <input onClick={GoogleSign} className="btn btn-primary text-white" type="submit" value="Continue With Google" />
         </div>
     );
 };

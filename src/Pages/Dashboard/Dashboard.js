@@ -9,15 +9,15 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
 
     return (
-        <div class="drawer drawer-mobile px-12">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content text-center px-6">
+        <div className="drawer drawer-mobile px-12">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content text-center px-6">
                 {/* <!-- Page content here --> */}
                 <Outlet></Outlet>
             </div>
-            <div class="drawer-side">
-                <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
+            <div className="drawer-side">
+                <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                <ul className="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to={'/dashboard'}>Update My Profile</Link></li>
                     {user && <>

@@ -2,15 +2,23 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, refetch }) => {
-    const { _id, toolName, email, quantity, price } = order;
+    const { _id, toolName, email, quantity } = order;
     const navigate = useNavigate();
 
     const handleToDelete = () => {
         fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${email}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    console.log(data);
+                }
+                refetch();
+            })
     }
 
     const handleToPaid = id => {
@@ -24,10 +32,14 @@ const Order = ({ order, index, refetch }) => {
             <td>{email}</td>
             <td>{quantity} Pic</td>
             <td>
-                <button onClick={() => handleToDelete} class="btn btn-error btn-sm text-white">Cancel</button>
+                <button
+                    onClick={() => handleToDelete(_id)}
+                    className="btn btn-error btn-sm text-white">
+                    Cancel
+                </button>
             </td>
             <td>
-                <button onClick={() => handleToPaid(_id)} class="btn btn-primary btn-sm text-white">Payment</button>
+                <button onClick={() => handleToPaid(_id)} className="btn btn-primary btn-sm text-white">Payment</button>
             </td>
         </tr>
     );

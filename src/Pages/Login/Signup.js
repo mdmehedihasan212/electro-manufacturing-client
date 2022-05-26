@@ -36,11 +36,11 @@ const Signup = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div class="hero min-h-screen">
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="hero min-h-screen">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <h1 className='text-4xl text-center text-primary mt-6'>Sign Up</h1>
-                        <div class="card-body">
-                            <div class="form-control">
+                        <div className="card-body">
+                            <div className="form-control">
                                 <input
                                     {...register("name", {
                                         required: {
@@ -54,8 +54,8 @@ const Signup = () => {
                                     })}
                                     type="text"
                                     placeholder="Name"
-                                    class="input input-bordered" />
-                                <label class="label">
+                                    className="input input-bordered" />
+                                <label className="label">
                                     {errors.name?.type === 'required' &&
                                         <span className="label-text-alt text-red-500">{errors.name?.message}</span>
                                     }
@@ -64,7 +64,7 @@ const Signup = () => {
                                     }
                                 </label>
                             </div>
-                            <div class="form-control">
+                            <div className="form-control">
                                 <input
                                     {...register("email", {
                                         required: {
@@ -78,8 +78,8 @@ const Signup = () => {
                                     })}
                                     type="email"
                                     placeholder="Email"
-                                    class="input input-bordered" />
-                                <label class="label">
+                                    className="input input-bordered" />
+                                <label className="label">
                                     {errors.email?.type === 'required' &&
                                         <span className="label-text-alt text-red-500">{errors.email?.message}</span>
                                     }
@@ -88,7 +88,7 @@ const Signup = () => {
                                     }
                                 </label>
                             </div>
-                            <div class="form-control">
+                            <div className="form-control">
                                 <input
                                     {...register("password", {
                                         required: {
@@ -102,8 +102,8 @@ const Signup = () => {
                                     })}
                                     type="password"
                                     placeholder="Password"
-                                    class="input input-bordered" />
-                                <label class="label">
+                                    className="input input-bordered" />
+                                <label className="label">
                                     {errors.password?.type === 'required' &&
                                         <span className="label-text-alt text-red-500">{errors.password?.message}</span>
                                     }
@@ -112,8 +112,8 @@ const Signup = () => {
                                     }
                                 </label>
                             </div>
-                            <div class="form-control">
-                                <input class="btn btn-primary text-white" type="submit" value="Sign Up" />
+                            <div className="form-control">
+                                <input className="btn btn-primary text-white" type="submit" value="Sign Up" />
                             </div>
                             <GoogleLogin></GoogleLogin>
                         </div>

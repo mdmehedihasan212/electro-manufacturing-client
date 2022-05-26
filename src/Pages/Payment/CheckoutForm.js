@@ -88,8 +88,8 @@ const CheckoutForm = ({ paid }) => {
                 }}
             />
             <p className='text-red-500 mt-2'>{cardError}</p>
-            <div class="form-control mt-6">
-                <button type="submit" disabled={!stripe || !clientSecret} class="btn btn-primary text-white">Payment</button>
+            <div className="form-control mt-6">
+                <button type="submit" disabled={!stripe || !clientSecret} className="btn btn-primary text-white">Payment</button>
             </div>
         </form>
     );
