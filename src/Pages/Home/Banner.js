@@ -1,5 +1,8 @@
 import React from 'react';
-import banner from '../../assets/Banner/banner-1.webp';
+import banner2 from '../../assets/Banner/banner-2.webp';
+import banner3 from '../../assets/Banner/banner-3.webp';
+import banner4 from '../../assets/Banner/banner-4.webp';
+import banner5 from '../../assets/Banner/banner-5.webp';
 import PrimaryButton from '../Shared/PrimaryButton';
 
 const Banner = () => {
@@ -7,7 +10,7 @@ const Banner = () => {
         <div className="carousel min-h-screen w-full">
             <div id="slide1" className="carousel-item relative w-full">
                 <div className="hero min-h-screen items-center text-center" style={{
-                    background: `url(${banner})`,
+                    background: `url(${banner2})`,
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
@@ -28,16 +31,16 @@ const Banner = () => {
             </div>
             <div id="slide2" className="carousel-item relative w-full">
                 <div className="hero min-h-screen items-center text-center" style={{
-                    background: `url(${banner})`,
+                    background: `url(${banner3})`,
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xl'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-7xl font-bold text-primary">Committed</h1>
-                            <h2 className='mb-5 text-7xl'>To Super Quality</h2>
-                            <p className='mb-5 text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
                             <PrimaryButton>Go to Shop</PrimaryButton>
                         </div>
                     </div>
@@ -49,16 +52,16 @@ const Banner = () => {
             </div>
             <div id="slide3" className="carousel-item relative w-full">
                 <div className="hero min-h-screen items-center text-center" style={{
-                    background: `url(${banner})`,
+                    background: `url(${banner4})`,
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xl'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-7xl font-bold text-primary">Committed</h1>
-                            <h2 className='mb-5 text-7xl'>To Super Quality</h2>
-                            <p className='mb-5 text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
                             <PrimaryButton>Go to Shop</PrimaryButton>
                         </div>
                     </div>
@@ -70,16 +73,16 @@ const Banner = () => {
             </div>
             <div id="slide4" className="carousel-item relative w-full">
                 <div className="hero min-h-screen items-center text-center" style={{
-                    background: `url(${banner})`,
+                    background: `url(${banner5})`,
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xl'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-7xl font-bold text-primary">Committed</h1>
-                            <h2 className='mb-5 text-7xl'>To Super Quality</h2>
-                            <p className='mb-5 text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
                             <PrimaryButton>Go to Shop</PrimaryButton>
                         </div>
                     </div>
