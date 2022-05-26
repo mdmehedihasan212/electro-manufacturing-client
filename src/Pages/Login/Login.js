@@ -1,9 +1,7 @@
-import { async } from '@firebase/util';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useEffect, useRef, useState } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link as p, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 import useToken from '../../hooks/useToken';
@@ -12,19 +10,26 @@ import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [email, setEmail] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const emailRef = useRef('');
+
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const navigate = useNavigate();
-    const location = useLocation();
+
+    const [
+        sendPasswordResetEmail,
+        sending,
+        ResetError
+    ] = useSendPasswordResetEmail(auth);
+
     const [token] = useToken(user);
 
     let from = location.state?.from?.pathname || "/";
-
     useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
@@ -38,6 +43,14 @@ const Login = () => {
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     };
+
+    const handleResetPassword = async () => {
+        const email = emailRef.current?.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Send Password Reset Email');
+        }
+    }
 
     return (
         <div>
@@ -59,7 +72,7 @@ const Login = () => {
                                         }
                                     })}
                                     type="email"
-                                    onChange={(event) => setEmail(event.target.value)}
+                                    ref={emailRef}
                                     placeholder="Email"
                                     className="input input-bordered" />
                                 <label className="label">
@@ -95,11 +108,7 @@ const Login = () => {
                                     }
                                 </label>
                                 <label className="label">
-                                    <button onClick={async () => {
-                                        await sendPasswordResetEmail(email);
-                                        toast('Send Password Reset Email');
-                                    }}
-                                        className="link link-hover">Forgot password?</button>
+                                    <button onClick={handleResetPassword} className="link link-hover">Forgot password?</button>
                                 </label>
                             </div>
                             <div className="form-control">

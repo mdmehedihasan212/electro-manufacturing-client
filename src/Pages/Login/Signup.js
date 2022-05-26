@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase/firebase.init';
@@ -17,8 +17,6 @@ const Signup = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
-    const [sendPasswordResetEmail, sending, ResetError] = useSendPasswordResetEmail(auth);
 
     const [token] = useToken(user)
 
