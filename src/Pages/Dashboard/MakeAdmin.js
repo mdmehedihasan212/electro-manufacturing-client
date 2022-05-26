@@ -1,21 +1,22 @@
-import React from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading';
+import React, { useEffect, useState } from 'react';
 import Users from './Users';
 
 const MakeAdmin = () => {
-
-    const { data: users, isLoading, refetch } = useQuery(['users'], () =>
-        fetch('http://localhost:5000/user').then(res => res.json()))
-
-    if (isLoading) {
-        return <Loading></Loading>
-    }
-
+    const [users, setUsers] = useState([])
     console.log(users);
+
+    useEffect(() => {
+        const url = 'http://localhost:5000/user';
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setUsers(data)
+            })
+    }, [])
+
     return (
         <div>
-            <h1>Make Admin: {users.length}</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>

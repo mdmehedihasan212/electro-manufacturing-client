@@ -17,7 +17,6 @@ const useToken = user => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const JwtToken = data.token;
                     localStorage.setItem('token', JwtToken)
                     setToken(JwtToken)

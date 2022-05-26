@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 import useToken from '../../hooks/useToken';
 
@@ -10,13 +9,14 @@ const GoogleLogin = () => {
     const navigate = useNavigate();
     const [token] = useToken(user)
 
-    if (token) {
-        navigate('/')
-    }
+    useEffect(() => {
+        if (token) {
+            navigate('/')
+        }
+    }, [token, navigate])
 
     const GoogleSign = () => {
         signInWithGoogle()
-        console.log('Google');
     }
 
     return (
