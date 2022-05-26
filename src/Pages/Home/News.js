@@ -10,19 +10,19 @@ const News = () => {
             _id: 1,
             img: news1,
             name: 'Meatloaf Kielbasa Meatball T-bone Andouille Pork',
-            description: 'Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the'
+            description: 'Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon.'
         },
         {
             _id: 2,
             img: news2,
             name: 'Meatloaf Kielbasa Meatball T-bone Andouille Pork',
-            description: 'Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the'
+            description: 'Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon.'
         },
         {
             _id: 3,
             img: news3,
             name: 'Meatloaf Kielbasa Meatball T-bone Andouille Pork',
-            description: 'Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the'
+            description: 'Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon.'
         }
     ]
 

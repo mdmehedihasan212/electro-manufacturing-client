@@ -7,8 +7,9 @@ const AddReview = () => {
         event.preventDefault();
 
         const reviews = {
+            image: event.target.link.value,
             name: event.target.name.value,
-            description: event.target.description.value,
+            review: event.target.review.value,
         }
         console.log(reviews);
 
@@ -27,12 +28,11 @@ const AddReview = () => {
 
     return (
         <div>
-            <h1>Add A Review</h1>
             <div class="hero min-h-screen">
                 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div class="card-body">
                         <form onSubmit={handleSubmit}>
-                            <h1 className='text-center mb-1'>Please select your ratings</h1>
+                            <h1 className='text-xl text-primary text-center mb-1'>Please select your ratings</h1>
                             <div class="rating rating-md my-4">
                                 <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" checked />
@@ -41,8 +41,9 @@ const AddReview = () => {
                                 <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
                             </div>
                             <div>
+                                <input type="text" name='link' placeholder='Photo Link' class="input input-bordered w-3/4 max-w-xs mb-3" />
                                 <input type="text" name='name' placeholder="Name" class="input input-bordered w-3/4 max-w-xs mb-3" />
-                                <textarea name='description' class="textarea textarea-bordered w-3/4" placeholder="Description"></textarea>
+                                <textarea type="text" name='review' class="textarea textarea-bordered w-3/4" placeholder="Description"></textarea>
                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary text-white">Submit</button>

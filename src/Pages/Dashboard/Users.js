@@ -24,12 +24,12 @@ const Users = ({ user, index }) => {
             <td>
                 {
                     role === 'admin' ?
-                        <button className='btn btn-sm' disabled>Already Admin</button>
-                        : <button onClick={makeAdmin} className='btn btn-sm'>Make Admin</button>
+                        <button className='btn btn-primary btn-sm text-white' disabled>Already Admin</button>
+                        : <button onClick={makeAdmin} className='btn btn-primary btn-sm text-white'>Make Admin</button>
                 }
             </td>
             <td>
-                <button className='btn btn-sm'>Remove User</button>
+                <button className='btn btn-error btn-sm text-white'>Remove User</button>
             </td>
         </tr>
     );

@@ -12,12 +12,14 @@ const ToolCard = ({ tool }) => {
 
     return (
         <div class="card shadow-2xl rounded-none">
-            <figure><img className='w-3/4' src={image} alt="img" /></figure>
-            <div class="p-8 text-center text-neutral">
-                <h1 className='text-2xl'>Name: {name}</h1>
-                <p className='text-lg'>Available Quantity: {available_quantity}</p>
-                <p className='text-lg'>Minimum Quantity: {minimum_quantity}</p>
-                <p className='text-lg'>Price: {price}</p>
+            <figure>
+                <img className='w-1/2' src={image} alt="img" />
+            </figure>
+            <div class="p-6 text-center text-neutral">
+                <h1 className='text-xl'>Name: {name}</h1>
+                <p className='text-base'>Available Quantity: {available_quantity}</p>
+                <p className='text-base'>Minimum Quantity: {minimum_quantity}</p>
+                <p className='text-base'>Price: {price}</p>
                 <p>Description: {description}</p>
                 <div class="mt-2 justify-center">
                     <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none' onClick={() => handleToolsDetails(_id)}>Purchase</button>

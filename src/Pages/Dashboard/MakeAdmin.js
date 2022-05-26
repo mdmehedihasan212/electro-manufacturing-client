@@ -3,14 +3,12 @@ import Users from './Users';
 
 const MakeAdmin = () => {
     const [users, setUsers] = useState([])
-    console.log(users);
 
     useEffect(() => {
         const url = 'http://localhost:5000/user';
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setUsers(data)
             })
     }, [])
