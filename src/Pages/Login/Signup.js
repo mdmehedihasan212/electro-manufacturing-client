@@ -2,7 +2,6 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
 import useToken from '../../hooks/useToken';
 import GoogleLogin from './GoogleLogin';
@@ -23,16 +22,15 @@ const Signup = () => {
 
     const [token] = useToken(user)
 
-    if (user) {
+    if (token) {
         console.log('sign user info', user);
+        navigate('/')
     }
 
     const onSubmit = async data => {
         console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password)
-        await updateProfile({ displayName: data.name });
-        toast('Updated profile');
-        // navigate('/')
+        await updateProfile({ displayName: data.name })
     };
 
     return (

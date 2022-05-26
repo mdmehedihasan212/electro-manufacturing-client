@@ -15,7 +15,7 @@ const MyPortfolio = () => {
                         <p>Email: mdmehedihasan384@gmail.com</p>
                         <p>Institute: Islamic Arabic University, Dhaka.</p>
                         <p>Educational Background: B.A (running)</p>
-                        <p>Skills : ....Read More</p>
+                        <p>Skills : ....read more</p>
                         <div class="card-actions">
                             <label for="my-modal-6" class="mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none">Read More
                             </label>
@@ -39,7 +39,7 @@ const MyPortfolio = () => {
                                     <h3 class="font-bold text-lg">My Projects Live Website Links :</h3>
 
                                     <div class="items-center text-center">
-                                        <label for="my-modal-6" class="mt-5 btn btn-outline btn-primary rounded-none">Cancel</label>
+                                        <label for="my-modal-6" class="mt-5 btn btn-outline btn-primary rounded-none">Ok</label>
                                     </div>
                                 </div>
                             </div>

@@ -3,14 +3,20 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
+import useToken from '../../hooks/useToken';
 
 const GoogleLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const [token] = useToken(user)
+
+    if (token) {
+        navigate('/')
+    }
 
     const GoogleSign = () => {
         signInWithGoogle()
-        navigate('/')
+        console.log('Google');
     }
 
     return (

@@ -10,13 +10,7 @@ const Order = ({ order, index, refetch }) => {
             method: 'DELETE'
         })
             .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    window.confirm(`Are you sure cancel your ${toolName} order`)
-                }
-                refetch()
-                console.log(data);
-            })
+            .then(data => console.log(data))
     }
 
     const handleToPaid = id => {
@@ -30,7 +24,7 @@ const Order = ({ order, index, refetch }) => {
             <td>{email}</td>
             <td>{quantity} Pic</td>
             <td>
-                <button onClick={handleToDelete} class="btn btn-sm">Cancel</button>
+                <button onClick={() => handleToDelete} class="btn btn-sm">Cancel</button>
             </td>
             <td>
                 <button onClick={() => handleToPaid(_id)} class="btn btn-sm">Paid</button>
