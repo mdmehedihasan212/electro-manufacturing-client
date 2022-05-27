@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.init';
+import Loading from '../Shared/Loading';
 import Users from './Users';
 
 const MakeAdmin = () => {
@@ -15,6 +16,10 @@ const MakeAdmin = () => {
                 setUsers(data)
             })
     }, [])
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>

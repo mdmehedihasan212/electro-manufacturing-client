@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Users = ({ user, index, authUser }) => {
     const { email, role } = user;
@@ -13,7 +14,23 @@ const Users = ({ user, index, authUser }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                toast(`Successfully Make Admin ${authUser.displayName}`)
+            })
+    }
+
+    const removeUser = () => {
+        const url = `https://enigmatic-taiga-40573.herokuapp.com/admin/${email}`;
+        fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast(`Successfully Delete ${authUser.displayName} `);
+                }
             })
     }
 
@@ -30,7 +47,7 @@ const Users = ({ user, index, authUser }) => {
                 }
             </td>
             <td>
-                <button className='btn btn-error btn-sm text-white'>Remove User</button>
+                <button onClick={removeUser} className='btn btn-error btn-sm text-white'>Remove User</button>
             </td>
         </tr>
     );

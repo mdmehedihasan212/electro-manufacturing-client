@@ -3,16 +3,22 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
+import Loading from '../Shared/Loading';
 
 const Purchase = () => {
     const { id } = useParams();
     const [tool, setTool] = useState({});
     const [quantity, setQuantity] = useState(40)
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     useEffect(() => {
         const url = `https://enigmatic-taiga-40573.herokuapp.com/tools/${id}`;
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+        })
             .then(res => res.json())
             .then(data => {
                 setTool(data)
@@ -51,6 +57,10 @@ const Purchase = () => {
     const handleDecreaseQuantity = () => {
         if (quantity > 40)
             setQuantity(quantity - 1)
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

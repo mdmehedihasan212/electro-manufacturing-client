@@ -6,8 +6,8 @@ const ManageProducts = () => {
     const [tools] = useTools([]);
 
     return (
-        <div class="overflow-x-auto w-full">
-            <table class="table w-full text-center">
+        <div className="overflow-x-auto w-full">
+            <table className="table w-full text-center">
                 <thead>
                     <tr>
                         <th></th>

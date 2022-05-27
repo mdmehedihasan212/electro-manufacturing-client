@@ -1,14 +1,17 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
 
-    const { data: reviews, isLoading, refetch } = useQuery('review', () =>
-        fetch(`https://enigmatic-taiga-40573.herokuapp.com/review`).then(res =>
-            res.json()
-        )
+    const { data: reviews, isLoading } = useQuery('review', () =>
+        fetch(`https://enigmatic-taiga-40573.herokuapp.com/review`).then(res => res.json())
     )
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>

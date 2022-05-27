@@ -1,5 +1,4 @@
-import { async } from '@firebase/util';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from 'react-router-dom';

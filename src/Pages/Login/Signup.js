@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase/firebase.init';
 import useToken from '../../hooks/useToken';
+import Loading from '../Shared/Loading';
 import GoogleLogin from './GoogleLogin';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -30,6 +32,10 @@ const Signup = () => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name })
     };
+
+    if (loading || updating) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>
@@ -110,6 +116,9 @@ const Signup = () => {
                                     }
                                 </label>
                             </div>
+                            <label className="label">
+                                {(error || updateError) && <span className="label-text-alt text-red-500">{error?.message || updateError?.message}</span>}
+                            </label>
                             <div className="form-control">
                                 <input className="btn btn-primary text-white" type="submit" value="Sign Up" />
                             </div>

@@ -9,7 +9,7 @@ const Blogs = () => {
             description: "Expand your view to the 6.6-inch Infinity-V Display of Galaxy A13 and see what you've been missing. And with FHD+ technology, your everyday content looks sharp, crisp and clear."
         },
         {
-            name: 'Galaxy A52s 5G',
+            name: 'Galaxy A52s',
             price: '25000tk',
             description: 'On the next-generation mobile data network, the power of 5G fast speeds changes the way you experience and share content — from super smooth gaming and streaming, to ultra-fast sharing and downloading. Upgrade to the Galaxy A52s 5G and speed up your smartphone experience.'
         },
@@ -20,7 +20,8 @@ const Blogs = () => {
         }
     ];
 
-
+    const result = products.find(({ name }) => name === 'Galaxy A52s 5G')
+    // console.log(result);
 
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 text-center p-12'>

@@ -3,10 +3,9 @@ import { toast } from 'react-toastify';
 
 const ManageProductCard = ({ product, index }) => {
     const { _id, image, name, price } = product;
-    console.log(product);
 
     const handleToDelete = () => {
-        fetch(`http://localhost:5000/tools/${_id}`, {
+        fetch(`https://enigmatic-taiga-40573.herokuapp.com/tools/${_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -15,7 +14,7 @@ const ManageProductCard = ({ product, index }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    console.log(data);
+                    toast(`Successfully Delete ${name} Item`);
                 }
             })
     }
@@ -24,8 +23,8 @@ const ManageProductCard = ({ product, index }) => {
         <tr>
             <td className='font-bold'>{index + 1}</td>
             <td>
-                <div class="avatar">
-                    <div class="w-16 border-2">
+                <div className="avatar">
+                    <div className="w-16 border-2">
                         <img src={image} alt="img" />
                     </div>
                 </div>

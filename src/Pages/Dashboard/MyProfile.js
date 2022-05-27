@@ -2,9 +2,10 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase/firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyProfile = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,6 +31,10 @@ const MyProfile = () => {
             .then((data) => {
                 toast('Successfully update user information')
             });
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

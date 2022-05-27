@@ -7,9 +7,8 @@ import ManageOrderCard from './ManageOrderCard';
 
 const ManageAllOrders = () => {
     const [user, loading] = useAuthState(auth);
-    console.log(user);
-    const { data: orders, isLoading } = useQuery(['orders'], () =>
-        fetch('http://localhost:5000/orders').then(res => res.json()))
+
+    const { data: orders, isLoading, refetch } = useQuery(['orders'], () => fetch('https://enigmatic-taiga-40573.herokuapp.com/orders').then(res => res.json()))
 
     if (isLoading || loading) {
         return <Loading></Loading>
@@ -37,6 +36,7 @@ const ManageAllOrders = () => {
                                 order={order}
                                 index={index}
                                 user={user}
+                                refetch={refetch}
                             ></ManageOrderCard>)
                         }
                     </tbody>

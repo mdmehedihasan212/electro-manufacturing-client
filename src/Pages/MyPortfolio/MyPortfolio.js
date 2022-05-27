@@ -37,6 +37,10 @@ const MyPortfolio = () => {
                                         <li>Mongodb</li>
                                     </ul>
                                     <h3 className="font-bold text-xl">My Projects Live Website Links :</h3>
+                                    <ul className='text-base mt-2'>
+                                        <li>Assignment 10 : https://wedding-photography-4229f.web.app/</li>
+                                        <li>Assignment 11 : https://phone-garage-d9a85.web.app/</li>
+                                    </ul>
 
                                     <div className="items-center text-center">
                                         <label htmlFor="my-modal-6" className="mt-5 btn btn-outline btn-primary rounded-none">Thank You</label>
