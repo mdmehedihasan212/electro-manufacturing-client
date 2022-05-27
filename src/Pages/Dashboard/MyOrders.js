@@ -12,7 +12,7 @@ const MyOrders = () => {
     const { data: orders, isLoading, refetch } = useQuery(['orders', email], () =>
         fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders?email=${email}`).then(res => res.json()))
 
-    if (loading) {
+    if (loading || isLoading) {
         return <Loading></Loading>
     }
 

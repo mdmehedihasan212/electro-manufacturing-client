@@ -18,14 +18,12 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        loading,
-        error,
+        loading
     ] = useSignInWithEmailAndPassword(auth);
 
     const [
         sendPasswordResetEmail,
-        sending,
-        ResetError
+        sending
     ] = useSendPasswordResetEmail(auth);
 
     const [token] = useToken(user);
@@ -37,13 +35,13 @@ const Login = () => {
         }
     }, [token, from, navigate])
 
-    if (loading) {
-        return <Loading></Loading>
-    }
-
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     };
+
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>

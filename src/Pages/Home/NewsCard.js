@@ -6,11 +6,11 @@ const NewsCard = ({ news }) => {
 
     return (
         <div className="card w-96 bg-base-100 shadow-2xl rounded-none">
-            <figure className="px-8 pt-8">
+            <figure className="px-8 pt-8 w-1/2 mx-auto">
                 <img src={img} alt="img" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="text-xl font-bold">{name}</h2>
                 <p>{description}</p>
                 <div className="card-actions">
                     <PrimaryButton>Read More</PrimaryButton>

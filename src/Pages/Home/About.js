@@ -1,6 +1,5 @@
 import React from 'react';
-import PrimaryButton from '../Shared/PrimaryButton';
-import about from '../../assets/About/about.webp';
+import about from '../../assets/About/about.png';
 
 const About = () => {
     return (

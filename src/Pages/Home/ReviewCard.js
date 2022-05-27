@@ -10,10 +10,16 @@ const ReviewCard = ({ userReview }) => {
                     <img src={image} alt='img' />
                 </div>
             </div>
-            <div className="card-body items-center text-center">
+            <div class="rating rating-sm mt-4 mb-2 justify-center text-center">
+                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" checked />
+                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+                <input type="radio" name="rating-4" class="mask mask-star-2 bg-primary" />
+            </div>
+            <div className="card-body pt-0 items-center text-center">
                 <h2 className="card-title">{name}</h2>
                 <p>{review}</p>
-
             </div>
         </div>
     );

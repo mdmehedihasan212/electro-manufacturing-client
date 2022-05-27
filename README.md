@@ -5,6 +5,7 @@
 # Project Features
 * This site is use css tailwind css for more component libraries based on your need.
 * This site use daisyUI for carousel and card and login form and others components.
+* This site font-family sans-serif apply on app.css.
 * I use stripe for payment getaway system.
 * I use firebase authentication for user authentication.
 * I use react form hook for write firebase function.

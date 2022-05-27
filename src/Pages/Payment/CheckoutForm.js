@@ -1,44 +1,11 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-const CheckoutForm = ({ paid }) => {
+const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
-    const [clientSecret, setClientSecret] = useState("");
-
-    const { price } = paid;
-
-    // const { data: clientSecret, isLoading, refatch } = useQuery(['clientSecret', price], () =>
-    //     fetch('https://enigmatic-taiga-40573.herokuapp.com/create-payment-intent', {
-    //         method: 'POST',
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         }
-    //     }).then(res => res.json())
-    // )
-    // console.log(clientSecret);
-
-    // useEffect(() => {
-    //     // Create PaymentIntent as soon as the page loads
-    //     const url = "https://enigmatic-taiga-40573.herokuapp.com/create-payment-intent";
-    //     console.log(url);
-    //     fetch(url, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({ price }),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data.clientSecret);
-    //             if (data.clientSecret) {
-    //                 setClientSecret(data.clientSecret)
-    //             }
-    //         });
-    // }, [price]);
-
+    const [success, setSuccess] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -67,7 +34,10 @@ const CheckoutForm = ({ paid }) => {
         else {
             setCardError('');
         }
+
+
     }
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -87,10 +57,11 @@ const CheckoutForm = ({ paid }) => {
                     },
                 }}
             />
-            <p className='text-red-500 mt-2'>{cardError}</p>
-            <div className="form-control mt-6">
-                <button type="submit" disabled={!stripe || !clientSecret} className="btn btn-primary text-white">Payment</button>
-            </div>
+            {cardError && <p className='text-red-500 mt-2'>{cardError}</p>}
+
+            <button className='btn btn-sm btn-primary mt-2' type="submit" disabled={!stripe}>
+                Pay
+            </button>
         </form>
     );
 };

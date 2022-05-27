@@ -23,17 +23,18 @@ const MyPortfolio = () => {
                                 <div className="modal-box">
                                     <h3 className="font-bold text-xl">My Skills As A Web Developer !</h3>
                                     <ul className='text-lg'>
-                                        <li>Html5 (basic)</li>
-                                        <li>Css3 (basic)</li>
-                                        <li>Bootstrap (basic)</li>
-                                        <li>Tailwind (basic)</li>
-                                        <li>Javascript (basic)</li>
-                                        <li>Modern Javascript ES6 (basic)</li>
-                                        <li>React (basic)</li>
-                                        <li>React Router (basic)</li>
-                                        <li>firebase (basic)</li>
-                                        <li>Node (basic)</li>
-                                        <li>Mongodb (basic)</li>
+                                        <p className='text-yellow-500 font-bold text-sm'>Note: All skills are basic knowledge</p>
+                                        <li>Html5</li>
+                                        <li>Css3</li>
+                                        <li>Bootstrap</li>
+                                        <li>Tailwind</li>
+                                        <li>Javascript</li>
+                                        <li>Modern Javascript ES6</li>
+                                        <li>React</li>
+                                        <li>React Router</li>
+                                        <li>firebase</li>
+                                        <li>Node</li>
+                                        <li>Mongodb</li>
                                     </ul>
                                     <h3 className="font-bold text-xl">My Projects Live Website Links :</h3>
 

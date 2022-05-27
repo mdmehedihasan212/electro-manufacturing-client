@@ -16,7 +16,7 @@ const ToolCard = ({ tool }) => {
                 <img className='w-1/2' src={image} alt="img" />
             </figure>
             <div className="p-6 text-center text-neutral">
-                <h1 className='text-xl'>Name: {name}</h1>
+                <h1 className='text-xl font-bold'>Name: {name}</h1>
                 <p className='text-base'>Available Quantity: {available_quantity}</p>
                 <p className='text-base'>Minimum Quantity: {minimum_quantity}</p>
                 <p className='text-base'>Price: ${price}</p>
