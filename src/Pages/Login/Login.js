@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
@@ -12,7 +13,7 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
-    const emailRef = useRef('');
+    const [email, setEmail] = useState('');
 
     const [
         signInWithEmailAndPassword,
@@ -44,14 +45,6 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     };
 
-    const handleResetPassword = async () => {
-        const email = emailRef.current?.value;
-        if (email) {
-            await sendPasswordResetEmail(email);
-            toast('Send Password Reset Email');
-        }
-    }
-
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -71,8 +64,9 @@ const Login = () => {
                                             message: 'Provide a valid email'
                                         }
                                     })}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     type="email"
-                                    ref={emailRef}
                                     placeholder="Email"
                                     className="input input-bordered" />
                                 <label className="label">
@@ -108,7 +102,14 @@ const Login = () => {
                                     }
                                 </label>
                                 <label className="label">
-                                    <button onClick={handleResetPassword} className="link link-hover">Forgot password?</button>
+                                    <button
+                                        onClick={async () => {
+                                            await sendPasswordResetEmail(email);
+                                            toast('Send reset password email');
+                                        }}
+                                        className="link link-hover">
+                                        Forgot password?
+                                    </button>
                                 </label>
                             </div>
                             <div className="form-control">
