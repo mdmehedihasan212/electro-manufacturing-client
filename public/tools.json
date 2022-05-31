@@ -4,7 +4,7 @@
         "name": "Ait Nutrunners",
         "available_quantity": 2000,
         "minimum_quantity": 170,
-        "price": "50",
+        "price": 50,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -12,7 +12,7 @@
         "name": "Balancers",
         "available_quantity": 800,
         "minimum_quantity": 120,
-        "price": "65",
+        "price": 65,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -20,7 +20,7 @@
         "name": "Drills",
         "available_quantity": 1800,
         "minimum_quantity": 180,
-        "price": "80",
+        "price": 80,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -28,7 +28,7 @@
         "name": "Hose Reels",
         "available_quantity": 1200,
         "minimum_quantity": 200,
-        "price": "90",
+        "price": 90,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -36,7 +36,7 @@
         "name": "Rivet Guns",
         "available_quantity": 1500,
         "minimum_quantity": 200,
-        "price": "85",
+        "price": 85,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -44,7 +44,7 @@
         "name": "Sanders",
         "available_quantity": 600,
         "minimum_quantity": 100,
-        "price": "99",
+        "price": 99,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -52,7 +52,7 @@
         "name": "saws",
         "available_quantity": 1000,
         "minimum_quantity": 150,
-        "price": "110",
+        "price": 110,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     },
     {
@@ -60,7 +60,7 @@
         "name": "Screwdrivers",
         "available_quantity": 2000,
         "minimum_quantity": 500,
-        "price": "45",
+        "price": 45,
         "description": "Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon."
     }
 ]

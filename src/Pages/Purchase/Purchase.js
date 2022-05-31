@@ -12,7 +12,7 @@ const Purchase = () => {
     const [user, loading] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `https://enigmatic-taiga-40573.herokuapp.com/tools/${id}`;
+        const url = `http://localhost:5000/tools/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {

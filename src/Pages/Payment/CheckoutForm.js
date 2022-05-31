@@ -10,21 +10,23 @@ const CheckoutForm = ({ paid }) => {
 
     const { price } = paid;
 
-    // useEffect(() => {
-    //     fetch('https://enigmatic-taiga-40573.herokuapp.com/create-payment-intent', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ price })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.clientSecret) {
-    //                 setClientSecret(data.clientSecret)
-    //             }
-    //         })
-    // }, [price])
+    useEffect(() => {
+        if (price) {
+            fetch('http://localhost:5000/create-payment-intent', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({ price })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.clientSecret) {
+                        setClientSecret(data.clientSecret)
+                    }
+                })
+        }
+    }, [price])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -53,10 +55,7 @@ const CheckoutForm = ({ paid }) => {
         else {
             setCardError('');
         }
-
-
     }
-
 
     return (
         <form onSubmit={handleSubmit}>
@@ -77,9 +76,8 @@ const CheckoutForm = ({ paid }) => {
                 }}
             />
             {cardError && <p className='text-red-500 mt-2'>{cardError}</p>}
-
-            <button className='btn btn-sm btn-primary mt-2' type="submit" disabled={!stripe || !clientSecret}>
-                Pay
+            <button className='btn btn-sm w-full btn-primary mt-4 text-white' type="submit" disabled={!stripe || !clientSecret}>
+                Confirm Payment
             </button>
         </form>
     );

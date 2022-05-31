@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, refetch }) => {
     const { _id, toolName, price, quantity, email } = order;
+    console.log(order);
     const navigate = useNavigate();
 
     const handleToDelete = () => {
