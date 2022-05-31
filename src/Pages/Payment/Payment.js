@@ -9,6 +9,7 @@ const stripePromise = loadStripe('pk_test_51L14KjAQv1S3Cord0vDrT20jYMa3eYBQSBilQ
 const Payment = () => {
     const { id } = useParams();
     const [paid, setPaid] = useState({})
+    const { toolName, price, quantity } = paid;
 
     useEffect(() => {
         fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${id}`)
@@ -22,8 +23,8 @@ const Payment = () => {
         <div className="hero min-h-screen">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">
-                    <p>Tool Name: {paid.toolName}</p>
-                    <p>Please Pay: ${paid.price * paid.quantity}</p>
+                    <p>Tool Name: {toolName}</p>
+                    <p>Please Pay: ${price * quantity}</p>
                     <p className="card-title text-secondary mb-2">Card Details</p>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm paid={paid} />
