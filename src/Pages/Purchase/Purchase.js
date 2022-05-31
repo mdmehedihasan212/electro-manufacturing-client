@@ -8,8 +8,11 @@ import Loading from '../Shared/Loading';
 const Purchase = () => {
     const { id } = useParams();
     const [tool, setTool] = useState({});
-    const [quantity, setQuantity] = useState(40)
+    const [quantity, setQuantity] = useState(0)
+    const [inputOrder, setInPutOrder] = useState(0)
     const [user, loading] = useAuthState(auth);
+
+    const { name, price, image, available_quantity, minimum_quantity } = tool;
 
     useEffect(() => {
         const url = `http://localhost:5000/tools/${id}`;
@@ -27,11 +30,11 @@ const Purchase = () => {
 
     const handleSubmit = () => {
         const orders = {
-            toolName: tool.name,
-            price: tool.price,
+            toolName: name,
+            price: price,
             email: user.email,
-            availableQuantity: tool.available_quantity,
-            minimumQuantity: tool.minimum_quantity,
+            availableQuantity: available_quantity,
+            minimumQuantity: minimum_quantity,
             quantity: quantity
         }
 
@@ -49,14 +52,9 @@ const Purchase = () => {
             })
     }
 
-    const handleIncreaseQuantity = () => {
-        if (quantity < 117)
-            setQuantity(quantity + 1)
-    }
-
-    const handleDecreaseQuantity = () => {
-        if (quantity > 40)
-            setQuantity(quantity - 1)
+    const handleInputOrder = (event) => {
+        setInPutOrder(event.target.value);
+        setQuantity(inputOrder + 1);
     }
 
     if (loading) {
@@ -67,18 +65,18 @@ const Purchase = () => {
         <section className="hero min-h-screen">
             <div className="card lg:card-side bg-base-100 shadow-xl rounded-none">
                 <figure>
-                    <img src={tool.image} alt="img" />
+                    <img src={image} alt="img" />
                 </figure>
                 <div className="card-body items-center">
-                    <h2 className="card-title">Name: {tool.name}</h2>
-                    <p>Price: ${tool.price}</p>
-                    <p>Email: {user.email}</p>
-                    <p>Available Quantity: {tool.available_quantity}</p>
-                    <p>Minimum Quantity: {tool.minimum_quantity}</p>
-                    <p>Order Quantity: {quantity}</p>
+                    <h2 className="card-title">Name: {name}</h2>
+                    <p>Price: ${price * inputOrder}</p>
+                    <p>Available Quantity: {available_quantity}</p>
+                    <p>Minimum Quantity: {minimum_quantity}</p>
+                    <p>Order Quantity: {inputOrder}</p>
                     <div className="card-actions">
-                        <button onClick={handleDecreaseQuantity} className="btn btn-sm btn-primary text-white">Decrease Quantity</button>
-                        <button onClick={handleIncreaseQuantity} className="btn btn-sm btn-primary text-white">Increase Quantity</button>
+                        {/* <button onClick={handleDecreaseQuantity} className="btn btn-sm btn-primary text-white">Decrease Quantity</button>
+                        <button onClick={handleIncreaseQuantity} className="btn btn-sm btn-primary text-white">Increase Quantity</button> */}
+                        <input onChange={handleInputOrder} value={inputOrder} type="text" placeholder="Type here order quantity..." className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="card-actions">
                         <button onClick={handleSubmit} className="btn btn-wide btn-primary text-white">Place Order</button>

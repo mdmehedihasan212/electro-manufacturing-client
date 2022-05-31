@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, refetch }) => {
+    const navigate = useNavigate();
     const { _id, toolName, price, quantity, email } = order;
     console.log(order);
-    const navigate = useNavigate();
 
     const handleToDelete = () => {
         fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${email}`, {
@@ -27,7 +27,7 @@ const Order = ({ order, index, refetch }) => {
         <tr className='text-center'>
             <th>{index + 1}</th>
             <td>{toolName}</td>
-            <td>${price}</td>
+            <td>${price * quantity}</td>
             <td>{quantity} Pic</td>
             <td>
                 <button

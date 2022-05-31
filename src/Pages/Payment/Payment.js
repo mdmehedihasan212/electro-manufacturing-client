@@ -23,7 +23,7 @@ const Payment = () => {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">
                     <p>Tool Name: {paid.toolName}</p>
-                    <p>Please Pay: ${paid.price}</p>
+                    <p>Please Pay: ${paid.price * paid.quantity}</p>
                     <p className="card-title text-secondary mb-2">Card Details</p>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm paid={paid} />
