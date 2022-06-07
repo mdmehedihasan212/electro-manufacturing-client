@@ -12,7 +12,8 @@ const Purchase = () => {
     const [inputOrder, setInPutOrder] = useState(0)
     const [user, loading] = useAuthState(auth);
 
-    const { name, price, image, available_quantity, minimum_quantity } = tool;
+    const { name, price, image, available_quantity, minimum_quantity } = tool || {};
+    console.log(tool);
 
     useEffect(() => {
         const url = `http://localhost:5000/tools/${id}`;

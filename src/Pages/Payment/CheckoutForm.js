@@ -1,14 +1,15 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const CheckoutForm = ({ paid }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
-    const [success, setSuccess] = useState('');
+    const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
 
-    const { price } = paid;
+    const { price, email, toolName } = paid;
 
     useEffect(() => {
         if (price) {
@@ -55,6 +56,29 @@ const CheckoutForm = ({ paid }) => {
         else {
             setCardError('');
         }
+
+        // confirm card payment
+        const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: toolName,
+                        email: email,
+                    },
+                },
+            },
+        );
+
+        if (intentError) {
+            setCardError(intentError.message)
+        }
+        else {
+            setCardError('')
+            toast.success('Congrats! your payment complete')
+            setTransactionId(paymentIntent.id)
+        }
     }
 
     return (
@@ -76,6 +100,9 @@ const CheckoutForm = ({ paid }) => {
                 }}
             />
             {cardError && <p className='text-red-500 mt-2'>{cardError}</p>}
+            {transactionId &&
+                <p className='mt-2'>Your transactionId: <span className='text-yellow-500 font-bold'>{transactionId}</span></p>
+            }
             <button className='btn btn-sm w-full btn-primary mt-4 text-white' type="submit" disabled={!stripe || !clientSecret}>
                 Confirm Payment
             </button>

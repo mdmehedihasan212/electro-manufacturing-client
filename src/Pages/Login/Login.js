@@ -29,15 +29,12 @@ const Login = () => {
     const [token] = useToken(user);
 
     let from = location.state?.from?.pathname || "/";
+
     useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
         }
-        else {
-            toast(error?.message)
-        }
-
-    }, [token, from, navigate, error])
+    }, [token, from, navigate])
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
