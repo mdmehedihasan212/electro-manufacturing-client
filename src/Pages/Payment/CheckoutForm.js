@@ -9,7 +9,7 @@ const CheckoutForm = ({ paid }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
 
-    const { price, email, toolName } = paid;
+    const { _id, price, email, toolName } = paid;
 
     useEffect(() => {
         if (price) {
@@ -78,6 +78,24 @@ const CheckoutForm = ({ paid }) => {
             setCardError('')
             toast.success('Congrats! your payment complete')
             setTransactionId(paymentIntent.id)
+
+            // update database
+            const payment = {
+                toolName: _id,
+                transactionId: paymentIntent.id
+            }
+
+            fetch(`http://localhost:5000/order/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
         }
     }
 
