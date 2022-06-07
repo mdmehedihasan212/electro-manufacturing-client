@@ -13,13 +13,13 @@ const Banner = () => {
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
-                    <div className="hero-content text-center text-neutral-content uppercase">
+                    <div data-aos="fade-up" className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xs lg:text-xl animate__animated animate__fadeInUp animate__delay-0.5s'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary animate__animated animate__fadeInUp animate__delay-1s">Committed</h1>
-                            <h2 className='mb-5 text-4xl lg:text-7xl animate__animated animate__fadeInUp animate__delay-2s'>To Super Quality</h2>
-                            <p className='mb-5 text-base lg:text-2xl lowercase animate__animated animate__fadeInUp animate__delay-3s'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
-                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none animate__animated animate__fadeInUp animate__delay-4s'>Go to Shop</button>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none'>Go to Shop</button>
                         </div>
                     </div>
                 </div>
@@ -34,13 +34,13 @@ const Banner = () => {
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
-                    <div className="hero-content text-center text-neutral-content uppercase">
+                    <div data-aos="fade-up" className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xs lg:text-xl animate__animated animate__fadeInUp animate__delay-0.5s'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary animate__animated animate__fadeInUp animate__delay-1s">Committed</h1>
-                            <h2 className='mb-5 text-4xl lg:text-7xl animate__animated animate__fadeInUp animate__delay-2s'>To Super Quality</h2>
-                            <p className='mb-5 text-base lg:text-2xl lowercase animate__animated animate__fadeInUp animate__delay-3s'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
-                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none animate__animated animate__fadeInUp animate__delay-4s'>Go to Shop</button>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none'>Go to Shop</button>
                         </div>
                     </div>
                 </div>
@@ -55,13 +55,13 @@ const Banner = () => {
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
-                    <div className="hero-content text-center text-neutral-content uppercase">
+                    <div data-aos="fade-up" className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xs lg:text-xl animate__animated animate__fadeInUp animate__delay-0.5s'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary animate__animated animate__fadeInUp animate__delay-1s">Committed</h1>
-                            <h2 className='mb-5 text-4xl lg:text-7xl animate__animated animate__fadeInUp animate__delay-2s'>To Super Quality</h2>
-                            <p className='mb-5 text-base lg:text-2xl lowercase animate__animated animate__fadeInUp animate__delay-3s'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
-                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none animate__animated animate__fadeInUp animate__delay-4s'>Go to Shop</button>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none'>Go to Shop</button>
                         </div>
                     </div>
                 </div>
@@ -78,11 +78,11 @@ const Banner = () => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content uppercase">
                         <div>
-                            <small className='mb-5 text-xs lg:text-xl animate__animated animate__fadeInUp animate__delay-0.5s'>Electro Manufacturing</small>
-                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary animate__animated animate__fadeInUp animate__delay-1s">Committed</h1>
-                            <h2 className='mb-5 text-4xl lg:text-7xl animate__animated animate__fadeInUp animate__delay-2s'>To Super Quality</h2>
-                            <p className='mb-5 text-base lg:text-2xl lowercase animate__animated animate__fadeInUp animate__delay-3s'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
-                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none animate__animated animate__fadeInUp animate__delay-4s'>Go to Shop</button>
+                            <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
+                            <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
+                            <h2 className='mb-5 text-4xl lg:text-7xl'>To Super Quality</h2>
+                            <p className='mb-5 text-base lg:text-2xl lowercase'>We won Many Industrial Awards and Got Many Certificates Since 2001-2016</p>
+                            <button className='mt-5 btn btn-outline btn-primary sm:btn-sm md:btn-md lg:btn-lg rounded-none'>Go to Shop</button>
                         </div>
                     </div>
                 </div>

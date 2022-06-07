@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
 import auth from '../../firebase/firebase.init';
 import Loading from '../Shared/Loading';
 import Order from './Order';
 
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
+    const [orders, setOrders] = useState([]);
 
-    const email = user?.email;
-    const { data: orders, isLoading, refetch } = useQuery(['orders', email], () =>
-        fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders?email=${email}`).then(res => res.json()))
+    useEffect(() => {
+        if (user) {
+            const url = `http://localhost:5000/orders?email=${user?.email}`;
+            console.log(url);
+            fetch(url)
+                .then(res => res.json())
+                .then(data => setOrders(data))
+        } else {
+            return <p>Sorry you have no orders</p>
+        }
+    }, [user])
 
-    if (loading || isLoading) {
+    console.log(orders);
+
+    if (loading) {
         return <Loading></Loading>
     }
 
@@ -36,7 +46,6 @@ const MyOrders = () => {
                                 key={order._id}
                                 order={order}
                                 index={index}
-                                refetch={refetch}
                             ></Order>)
                         }
                     </tbody>

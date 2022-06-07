@@ -69,13 +69,12 @@ const Purchase = () => {
                 </figure>
                 <div className="card-body items-center">
                     <h2 className="card-title">Name: {name}</h2>
-                    <p>Price: ${price * inputOrder}</p>
+                    <p>Per Price: ${price}</p>
+                    <p>Total Price: ${price * inputOrder}</p>
                     <p>Available Quantity: {available_quantity}</p>
                     <p>Minimum Quantity: {minimum_quantity}</p>
                     <p>Order Quantity: {inputOrder}</p>
                     <div className="card-actions">
-                        {/* <button onClick={handleDecreaseQuantity} className="btn btn-sm btn-primary text-white">Decrease Quantity</button>
-                        <button onClick={handleIncreaseQuantity} className="btn btn-sm btn-primary text-white">Increase Quantity</button> */}
                         <input onChange={handleInputOrder} value={inputOrder} type="text" placeholder="Type here order quantity..." className="input input-bordered w-full max-w-xs" />
                     </div>
                     <div className="card-actions">

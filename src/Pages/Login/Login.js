@@ -17,7 +17,8 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        loading
+        loading,
+        error,
     ] = useSignInWithEmailAndPassword(auth);
 
     const [
@@ -32,7 +33,11 @@ const Login = () => {
         if (token) {
             navigate(from, { replace: true });
         }
-    }, [token, from, navigate])
+        else {
+            toast(error?.message)
+        }
+
+    }, [token, from, navigate, error])
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)

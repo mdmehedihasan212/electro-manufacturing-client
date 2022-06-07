@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Order = ({ order, index, refetch }) => {
     const navigate = useNavigate();
     const { _id, toolName, price, quantity, email } = order;
-    console.log(order);
 
     const handleToDelete = () => {
         fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${email}`, {

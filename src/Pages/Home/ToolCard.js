@@ -11,7 +11,7 @@ const ToolCard = ({ tool }) => {
     }
 
     return (
-        <div className="card shadow-2xl rounded-none">
+        <div data-aos="zoom-in" className="card shadow-2xl rounded-none">
             <figure>
                 <img className='w-1/2' src={image} alt="img" />
             </figure>

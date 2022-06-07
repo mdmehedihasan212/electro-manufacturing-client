@@ -1,8 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import 'animate.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Login/Signup';
@@ -22,8 +18,18 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, [])
+
   return (
     <div className='App'>
       <Navbar></Navbar>
