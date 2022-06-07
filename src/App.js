@@ -23,6 +23,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PaymentHistory from './Pages/Dashboard/PaymentHistory';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='payments' element={<PaymentHistory></PaymentHistory>}></Route>
           <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
           <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
         </Route>

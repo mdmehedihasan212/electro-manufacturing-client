@@ -81,7 +81,9 @@ const CheckoutForm = ({ paid }) => {
 
             // update database
             const payment = {
-                toolName: _id,
+                toolID: _id,
+                toolName: toolName,
+                email: email,
                 transactionId: paymentIntent.id
             }
 

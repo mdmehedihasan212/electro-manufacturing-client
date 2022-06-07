@@ -37,7 +37,7 @@ const Order = ({ order, index, refetch }) => {
             </td>
             <td>
                 {(price && !order.paid) && <button onClick={() => handleToPaid(_id)} className="btn btn-primary btn-sm text-white">Payment</button>}
-                {(price && order.paid) && <button className="text-green-500" disabled>Pay</button>}
+                {(price && order.paid) && <button className="text-green-500 font-bold" disabled>Complete Payment</button>}
             </td>
         </tr>
     );
