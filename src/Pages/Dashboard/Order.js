@@ -27,7 +27,7 @@ const Order = ({ order, index, refetch }) => {
             <th>{index + 1}</th>
             <td>{toolName}</td>
             <td>${price * quantity}</td>
-            <td>{quantity} Pic</td>
+            <td>{quantity - 1} Pic</td>
             <td>
                 <button
                     onClick={() => handleToDelete(_id)}

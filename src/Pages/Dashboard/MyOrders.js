@@ -1,28 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import auth from '../../firebase/firebase.init';
 import Loading from '../Shared/Loading';
 import Order from './Order';
 
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
-    const [orders, setOrders] = useState([]);
 
-    useEffect(() => {
-        if (user) {
-            const url = `http://localhost:5000/orders?email=${user?.email}`;
-            console.log(url);
-            fetch(url)
-                .then(res => res.json())
-                .then(data => setOrders(data))
-        } else {
-            return <p>Sorry you have no orders</p>
-        }
-    }, [user])
+    const { data: queryOrders, isLoading, refetch } = useQuery(['email'], () => fetch(`http://localhost:5000/order?email=${user.email}`).then(res => res.json()))
 
-    console.log(orders);
-
-    if (loading) {
+    if (isLoading || loading) {
         return <Loading></Loading>
     }
 
@@ -42,10 +30,11 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders?.map((order, index) => <Order
+                            queryOrders?.map((order, index) => <Order
                                 key={order._id}
                                 order={order}
                                 index={index}
+                                refetch={refetch}
                             ></Order>)
                         }
                     </tbody>

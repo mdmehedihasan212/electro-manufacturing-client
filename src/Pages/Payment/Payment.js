@@ -30,7 +30,6 @@ const Payment = () => {
                         <CheckoutForm paid={paid} />
                     </Elements>
                 </div>
-
             </div>
         </div>
     );

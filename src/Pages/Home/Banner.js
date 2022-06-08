@@ -76,7 +76,7 @@ const Banner = () => {
                     backgroundSize: 'cover'
                 }}>
                     <div className="hero-overlay bg-opacity-60"></div>
-                    <div className="hero-content text-center text-neutral-content uppercase">
+                    <div data-aos="fade-up" className="hero-content text-center text-neutral-content uppercase">
                         <div>
                             <small className='mb-5 text-xs lg:text-xl'>Electro Manufacturing</small>
                             <h1 className="mb-1 text-4xl lg:text-7xl font-bold text-primary">Committed</h1>
