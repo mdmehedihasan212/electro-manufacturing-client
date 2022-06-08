@@ -13,7 +13,6 @@ const Purchase = () => {
     const [user, loading] = useAuthState(auth);
 
     const { name, price, image, available_quantity, minimum_quantity } = tool || {};
-    console.log(tool);
 
     useEffect(() => {
         const url = `http://localhost:5000/tools/${id}`;
@@ -31,6 +30,7 @@ const Purchase = () => {
 
     const handleSubmit = () => {
         const orders = {
+            user: user?.displayName,
             toolName: name,
             price: price,
             email: user.email,
@@ -69,7 +69,8 @@ const Purchase = () => {
                     <img src={image} alt="img" />
                 </figure>
                 <div className="card-body items-center">
-                    <h2 className="card-title">Name: {name}</h2>
+                    <h4 className="card-title">User: {user?.displayName}</h4>
+                    <p>Tool Name: <span className='font-bold'>{name}</span></p>
                     <p>Per Price: ${price}</p>
                     <p>Total Price: ${price * inputOrder}</p>
                     <p>Available Quantity: {available_quantity}</p>

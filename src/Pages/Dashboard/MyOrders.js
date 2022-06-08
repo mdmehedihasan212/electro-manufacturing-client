@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase/firebase.init';
@@ -8,7 +8,12 @@ import Order from './Order';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
 
-    const { data: queryOrders, isLoading, refetch } = useQuery(['email'], () => fetch(`http://localhost:5000/order?email=${user.email}`).then(res => res.json()))
+    const { data: queryOrders, isLoading, refetch } = useQuery(['email'], () => fetch(`http://localhost:5000/order?email=${user.email}`, {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+    }).then(res => res.json()))
 
     if (isLoading || loading) {
         return <Loading></Loading>

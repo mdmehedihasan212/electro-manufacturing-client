@@ -18,6 +18,7 @@ const PaymentHistory = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
+                            <th>Price</th>
                             <th>Email</th>
                             <th>TransactionId</th>
                         </tr>

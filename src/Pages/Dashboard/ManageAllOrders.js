@@ -1,16 +1,18 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import auth from '../../firebase/firebase.init';
 import Loading from '../Shared/Loading';
 import ManageOrderCard from './ManageOrderCard';
 
 const ManageAllOrders = () => {
-    const [user, loading] = useAuthState(auth);
 
-    const { data: orders, isLoading, refetch } = useQuery(['orders'], () => fetch('https://enigmatic-taiga-40573.herokuapp.com/orders').then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery(['orders'], () => fetch('https://enigmatic-taiga-40573.herokuapp.com/orders', {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+    }).then(res => res.json()))
 
-    if (isLoading || loading) {
+    if (isLoading) {
         return <Loading></Loading>
     }
 
@@ -35,7 +37,6 @@ const ManageAllOrders = () => {
                                 key={order._id}
                                 order={order}
                                 index={index}
-                                user={user}
                                 refetch={refetch}
                             ></ManageOrderCard>)
                         }

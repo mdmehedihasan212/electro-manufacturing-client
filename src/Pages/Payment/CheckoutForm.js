@@ -9,7 +9,7 @@ const CheckoutForm = ({ paid }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
 
-    const { _id, price, email, toolName } = paid;
+    const { _id, price, email, toolName, quantity } = paid;
 
     useEffect(() => {
         if (price) {
@@ -84,6 +84,7 @@ const CheckoutForm = ({ paid }) => {
                 toolID: _id,
                 toolName: toolName,
                 email: email,
+                price: price * quantity,
                 transactionId: paymentIntent.id
             }
 
