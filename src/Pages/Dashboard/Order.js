@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Order = ({ order, index, refetch }) => {
-    const navigate = useNavigate();
     const { _id, toolName, price, quantity, email } = order;
+    const navigate = useNavigate();
 
     const handleToDelete = () => {
         fetch(`https://enigmatic-taiga-40573.herokuapp.com/orders/${email}`, {
@@ -36,8 +36,8 @@ const Order = ({ order, index, refetch }) => {
                 </button>
             </td>
             <td>
-                {(price && !order.paid) && <button onClick={() => handleToPaid(_id)} className="btn btn-primary btn-sm text-white">Payment</button>}
-                {(price && order.paid) && <button className="text-green-500 font-bold" disabled>Complete Payment</button>}
+                {(price && !order.paid) && <button onClick={() => handleToPaid(_id)} className="btn btn-primary btn-sm text-white">Unpaid</button>}
+                {(price && order.paid) && <button className="btn btn-success btn-sm text-green-500 font-bold" disabled>Paid</button>}
             </td>
         </tr>
     );

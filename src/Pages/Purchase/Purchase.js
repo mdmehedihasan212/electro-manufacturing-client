@@ -15,7 +15,7 @@ const Purchase = () => {
     const { name, price, image, available_quantity, minimum_quantity } = tool || {};
 
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${id}`;
+        const url = `https://enigmatic-taiga-40573.herokuapp.com/tools/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {

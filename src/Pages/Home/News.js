@@ -28,7 +28,7 @@ const News = () => {
 
     return (
         <div>
-            <h1 className='text-5xl text-center my-12'>Latest News</h1>
+            <h1 className='text-5xl text-center my-12 text-primary'>Latest News</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 mb-12 gap-6'>
                 {
                     latestNews.map(news => <NewsCard

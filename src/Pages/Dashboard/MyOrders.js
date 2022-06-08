@@ -8,7 +8,7 @@ import Order from './Order';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
 
-    const { data: queryOrders, isLoading, refetch } = useQuery(['email'], () => fetch(`http://localhost:5000/order?email=${user.email}`, {
+    const { data: queryOrders, isLoading, refetch } = useQuery(['email'], () => fetch(`https://enigmatic-taiga-40573.herokuapp.com/order?email=${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`

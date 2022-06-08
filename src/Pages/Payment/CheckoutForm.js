@@ -13,7 +13,7 @@ const CheckoutForm = ({ paid }) => {
 
     useEffect(() => {
         if (price) {
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://enigmatic-taiga-40573.herokuapp.com/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -45,7 +45,7 @@ const CheckoutForm = ({ paid }) => {
         }
 
         // Use your card Element with other Stripe.js APIs
-        const { error, paymentMethod } = await stripe.createPaymentMethod({
+        const { error } = await stripe.createPaymentMethod({
             type: 'card',
             card,
         });
@@ -88,7 +88,7 @@ const CheckoutForm = ({ paid }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://enigmatic-taiga-40573.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

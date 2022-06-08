@@ -6,11 +6,16 @@ import Users from './Users';
 
 const MakeAdmin = () => {
     const [authUser, loading] = useAuthState(auth);
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const url = 'https://enigmatic-taiga-40573.herokuapp.com/user';
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setUsers(data)

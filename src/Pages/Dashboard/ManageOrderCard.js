@@ -40,7 +40,8 @@ const ManageOrderCard = ({ order, index, refetch }) => {
                 <button onClick={() => handleToDelete(_id)} className="btn btn-error btn-sm text-white">Cancel</button>
             </td>
             <td>
-                <button className="btn btn-warning btn-sm text-white">Unpaid</button>
+                {(price && !order.paid) && <button className="btn btn-primary btn-sm text-white">Unpaid</button>}
+                {(price && order.paid) && <button className="btn btn-success btn-sm text-green-500 font-bold" disabled>Paid</button>}
             </td>
         </tr>
     );
